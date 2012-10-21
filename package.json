@@ -21,7 +21,8 @@
     "uglify-js-brunch": ">= 1.0 < 1.5",
     "clean-css-brunch": ">= 1.0 < 1.5",
     "ember-handlebars-brunch": "git://github.com/icholy/ember-handlebars-brunch.git",
-    "auto-reload-brunch": "> 1.0 < 1.5"
+    "auto-reload-brunch": "> 1.0 < 1.5",
+    "stylus-brunch": ">= 1.0 < 1.5"
   },
   "devDependencies": {
     "mocha": "0.14.0",
