@@ -20,14 +20,13 @@ exports.config =
           'vendor/scripts/handlebars-1.0.0.beta.6.js',
           'vendor/scripts/ember-latest.js',
           'vendor/scripts/ember-data-latest.js',
-          'vendor/scripts/bootstrap.js'
           ]
 
     stylesheets:
       defaultExtension: 'css'
       joinTo: 'stylesheets/app.css'
       order:
-        before: ['vendor/styles/bootstrap.css']
+        before: ['vendor/styles/normalize.css']
 
     templates:
       precompile: true
@@ -38,4 +37,3 @@ exports.config =
     port: 3333
     base: '/'
     run: no
-
