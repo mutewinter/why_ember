@@ -19,7 +19,6 @@ exports.config =
           'vendor/scripts/jquery-1.8.0.min.js'
           'vendor/scripts/handlebars-1.0.0.beta.6.js'
           'vendor/scripts/ember-latest.js'
-          'vendor/scripts/ember-data-latest.js'
         ]
 
     stylesheets:
