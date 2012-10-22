@@ -3,4 +3,28 @@
 h1
   text-align center
   border-radius 3px
-  background grey
+
+.pull-right
+  float right
+
+a, a:visited
+  regular-color = #003dff
+  hover-color = #1368e7
+
+  color regular-color
+  text-decoration none
+
+  display inline-block
+  margin-bottom: 1px
+  border-bottom 1px solid regular-color
+
+  &:hover
+    color hover-color
+    border-bottom 1px solid hover-color
+
+.banner
+  width 100%
+  background #ebbc9d
+  text-align center
+  a, a:hover
+    border-bottom none

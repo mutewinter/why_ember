@@ -1,0 +1,6 @@
+<h1>{{content.length}} Slides</h1>
+{{#collection contentBinding="content" tagName="ul" itemTagName="li"}}
+  <a {{action showSlide view.content href=true}}>
+    {{view.content.name}}
+  </a>
+{{/collection}}
