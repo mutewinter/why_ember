@@ -1,8 +1,19 @@
 <div class="slide-controls">
-  <a {{action previousSlide}} href="#">Prevoius Slide</a>
-  <a {{action nextSlide}} href="#" class="pull-right">Next Slide</a>
+  {{#with App.previousSlide as previousSlide}}
+    <a {{action showSlide previousSlide href=true}} href="#" class="pull-left">
+      &lt; {{previousSlide.name}}
+    </a>
+  {{/with}}
+  <div class="slide-controls-home">
+    <a href="#" >Home</a>
+  </div>
+  {{#with App.nextSlide as nextSlide}}
+    <a {{action showSlide App.nextSlide href=true}} class="pull-right">
+      {{nextSlide.name}} &gt;
+    </a>
+  {{/with}}
 </div>
-<h1>{{content.name}}</h1>
+{{view App.SlideContentView contentBinding="content" name="slideContent"}}
 <div class="slide-position">
   {{view.slidePositionText}}
 </div>

@@ -1,7 +1,7 @@
 window.App = require("app")
-require "templates"
 require "models"
 require "data"
+require "templates"
 require "controllers"
 require "views"
 require "router"

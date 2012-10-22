@@ -1,7 +1,18 @@
 @import 'nib'
 
+/*
+  Slides
+  The overview of slides shown on the homepage.
+*/
+
 section.slides
   background #ccc
+
+
+/*
+  Slide
+  A presentation slide and all of its content.
+*/
 
 section.slide
   border-radius 5px
@@ -11,6 +22,17 @@ section.slide
   width 100%
   a
     margin 5px 10px
+    display inline-block
+  clearfix()
+
+/*
+  Slide Controls
+  The controls for navigating between slides.
+*/
+
+.slide-controls-home
+  width 100%
+  text-align center
 
 .slide-position
   fixed bottom right

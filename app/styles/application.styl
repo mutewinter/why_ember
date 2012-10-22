@@ -1,5 +1,7 @@
 @import 'nib'
 
+link-color = #003dff
+
 h1
   text-align center
   border-radius 3px
@@ -7,24 +9,31 @@ h1
 .pull-right
   float right
 
+.pull-left
+  float left
+
 a, a:visited
-  regular-color = #003dff
   hover-color = #1368e7
 
-  color regular-color
+  color link-color
   text-decoration none
 
   display inline-block
   margin-bottom: 1px
-  border-bottom 1px solid regular-color
+  border-bottom 1px solid link-color
 
   &:hover
     color hover-color
     border-bottom 1px solid hover-color
 
-.banner
-  width 100%
-  background #ebbc9d
-  text-align center
-  a, a:hover
-    border-bottom none
+  &.flash
+    animation flash 1.0s ease-in
+
+@keyframes flash
+  0%
+    color: yellow
+  100%
+    color: link-color
+
+.app-footer
+  fixed bottom

@@ -10,10 +10,12 @@ App.Router = Ember.Router.extend
     # Loading state, entered when there are promises returned by deserialize.
     loading: Ember.State.extend()
 
+    # /
     index: Ember.Route.extend
       route: '/'
       redirectsTo: 'slides.index'
 
+    # /slides
     slides: Ember.Route.extend
       route: '/slides'
       index: Ember.Route.extend
@@ -23,13 +25,8 @@ App.Router = Ember.Router.extend
           controller = router.get('applicationController')
           controller.connectOutlet 'slides', App.get('slides')
 
+      # /slides/:slug
       show: Ember.Route.extend
-        nextSlide: (router) ->
-          router.transitionTo 'show', App.get('nextSlide')
-
-        previousSlide: (router) ->
-          router.transitionTo 'show', App.get('previousSlide')
-
         route: '/:slug'
         serialize: (router, slide) ->
           if slide
@@ -40,6 +37,8 @@ App.Router = Ember.Router.extend
             slug: ''
         deserialize: (router, params) ->
           App.get('slides').findProperty('slug', params.slug)
+        exit: (router, test) ->
+          App.set('lastShownSlide', router.get('slideController.content'))
         connectOutlets: (router, slide) ->
           controller = router.get('applicationController')
           controller.connectOutlet 'slide', slide

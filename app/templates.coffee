@@ -5,3 +5,6 @@ require 'templates/application'
 
 require 'templates/slide'
 require 'templates/slides'
+
+App.get('slides').forEach (slide) ->
+  require slide.get('templateName') if slide.get('templateName')

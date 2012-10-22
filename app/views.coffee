@@ -4,4 +4,5 @@
 require 'views/application'
 
 require 'views/slide'
+require 'views/slide_content'
 require 'views/slides'

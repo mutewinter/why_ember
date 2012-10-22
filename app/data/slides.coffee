@@ -3,7 +3,9 @@
 App = require('app')
 
 App.set 'slides', [
-  App.Slide.create {name: 'First Slide'}
-  App.Slide.create {name: 'Second Slide'}
-  App.Slide.create {name: 'Third Slide'}
+  App.Slide.create slideName: 'overview'
+  App.Slide.create slideName: 'computed_properties'
+  App.Slide.create slideName: 'class_bindings'
+  App.Slide.create slideName: 'attribute_bindings'
+  App.Slide.create slideName: 'jquery_integration'
 ]
