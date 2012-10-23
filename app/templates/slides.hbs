@@ -5,12 +5,12 @@
     presentation I will give you some compelling reasons to consider Ember.
   </div>
 </div>
-{{#collection contentBinding="content" tagName="ul" itemTagName="li"}}
+{{#collection class="slide-list" contentBinding="content" tagName="ul" itemTagName="li"}}
   {{#with view.content as slide}}
-    <a {{action showSlide slide href=true}}
+    <div {{action showSlide slide href=true}}
       {{bindAttr class="slide.isLastShownSlide:flash"}}>
-      {{slide.name}}
-    </a>
+      {{view App.SlidePreviewView contentBinding="slide"}}
+    </div>
   {{/with}}
 {{/collection}}
 <span class="pull-right">{{content.length}} Slides</span>

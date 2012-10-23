@@ -7,7 +7,20 @@ slide-background-color = rgba(250,206,162,0.5)
   The overview of slides shown on the homepage.
 */
 
-//.slides
+ul.slide-list
+  list-style none
+
+  width 80%
+  margin 0 auto
+
+  clearfix()
+
+  > li
+    float left
+    padding 0
+    margin 0
+    width 250px
+    height 200px
 
 /*
   Slide
@@ -52,6 +65,31 @@ slide-background-color = rgba(250,206,162,0.5)
       line-height 48px
       &.small
         font-size 1.0em
+
+  &.preview
+    fake-width = 800px
+    fake-height = 500px
+    // The psuedo height and width so the slides render their content
+    width fake-width
+    height fake-height
+
+    transform scale(0.3) translate((-1 * fake-width), (-1 * fake-height))
+    overflow hidden
+
+    box-shadow 0 0 5px 5px black
+
+    &.flash
+      animation flash 1.0s ease-in
+
+    &:hover
+      cursor pointer
+
+
+@keyframes flash
+  0%
+    box-shadow 0 0 5px 10px yellow
+  100%
+    box-shadow 0 0 5px 5px black
 
 /*
   Slide-Specific Styles
