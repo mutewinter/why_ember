@@ -1,38 +1,99 @@
 @import 'nib'
 
+slide-background-color = rgba(250,206,162,0.5)
+
 /*
   Slides
   The overview of slides shown on the homepage.
 */
 
-section.slides
-  background #ccc
-
+//.slides
 
 /*
   Slide
-  A presentation slide and all of its content.
+  The entire slide page, including its controls.
 */
 
-section.slide
-  border-radius 5px
-  background #ccc
+.slide-container
+  height 500px
 
-.slide-controls
-  width 100%
-  a
-    margin 5px 10px
-    display inline-block
-  clearfix()
+/*
+  Slide Container
+  The container that holds a single slide.
+*/
+.slide-background
+  // From http://subtlepatterns.com/medic-packaging-foil/
+  background-image url('/img/foil.png')
+
+/*
+  Slide Content
+  The inner portion of the slide containing all of the content.
+*/
+
+.slide
+  background-color slide-background-color
+
+  border-radius 0 0 5px 5px
+  margin 3px 4px 8px 4px
+  box-shadow 0 0 0px 1px rgba(0,0,0,0.3),
+             0 0 0px 5px white,
+             0 5px 4px black
+
+  h1
+    padding-top 10px
+
+  ul
+    li
+      font-size 28px
+      font-size 1.8em
+      line-height 48px
+      &.small
+        font-size 1.0em
+
+/*
+  Slide-Specific Styles
+  Styles that apply to only a single slide.
+*/
+
+.floating-because
+  font-size 2em
+
+.because-target
+  //margin-left 80px
+  //list-style none
+  position relative
 
 /*
   Slide Controls
-  The controls for navigating between slides.
+  The controls that appear above all single slides.
 */
+.slide-controls
+  background-color rgba(255,255,255,0.5)
 
-.slide-controls-home
+  padding 10px 0
+  margin 0
   width 100%
-  text-align center
+  clearfix()
 
-.slide-position
-  fixed bottom right
+  list-style none
+
+  opacity 0.5
+  transition opacity 0.3s ease-out
+
+  &:hover
+    opacity 1
+
+  li
+    float left
+    width 20%
+    text-align center
+    &:first-child
+      text-align left
+      width 40%
+    &:last-child
+      text-align right
+      width 40%
+
+  a
+    margin 0 10px
+

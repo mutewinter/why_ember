@@ -1,16 +1,34 @@
 @import 'nib'
 
 link-color = #003dff
+orangina = #f24730
+
+body
+  height 100%
+  background-image url('/img/crisp_paper_ruffles.png')
+  font-family 'PT Sans' sans-serif
 
 h1
+  color orangina
+  font-size 3.5em
+  font-family 'Lobster Two' cursive
+  text-shadow 1px 1px rgba(0,0,0,0.5)
   text-align center
-  border-radius 3px
+  margin-top 0
+  margin-bottom 20px
 
-.pull-right
-  float right
+.banner
+  background-color rgba(250,206,162,0.5)
+  width 70%
+  max-width 500px
+  margin 10px auto
+  padding 30px
+  overflow hidden
 
-.pull-left
-  float left
+  .subtitle
+    width 90%
+    margin auto
+    text-align center
 
 a, a:visited
   hover-color = #1368e7
@@ -19,7 +37,7 @@ a, a:visited
   text-decoration none
 
   display inline-block
-  margin-bottom: 1px
+  margin-bottom 1px
   border-bottom 1px solid link-color
 
   &:hover
@@ -31,9 +49,44 @@ a, a:visited
 
 @keyframes flash
   0%
-    color: yellow
+    color yellow
+    border-bottom 1px solid yellow
   100%
-    color: link-color
+    color link-color
+    border-bottom 1px solid link-color
 
 .app-footer
+  width 100%
+
+  ul
+    text-align center
+    list-style none
+    padding 0
+    margin 0 5px
+
+    opacity 0.5
+    transition opacity 0.3s ease-out
+    &:hover
+      opacity 1
+
+    li
+      float left
+      width 33.33%
+
+      &:first-child
+        text-align left
+      &:last-child
+        text-align right
+
   fixed bottom
+
+/*
+  Position Styles
+  Styles that semantically change position of elements.
+*/
+
+.pull-right
+  float right
+
+.pull-left
+  float left

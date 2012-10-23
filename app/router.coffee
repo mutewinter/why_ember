@@ -37,8 +37,10 @@ App.Router = Ember.Router.extend
             slug: ''
         deserialize: (router, params) ->
           App.get('slides').findProperty('slug', params.slug)
-        exit: (router, test) ->
-          App.set('lastShownSlide', router.get('slideController.content'))
+        exit: (router) ->
+          App.set('lastShownSlide', App.get('currentSlide'))
+          App.set('currentSlide', null)
         connectOutlets: (router, slide) ->
           controller = router.get('applicationController')
+          App.set('currentSlide', slide)
           controller.connectOutlet 'slide', slide

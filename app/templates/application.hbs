@@ -1,6 +1,24 @@
 <div class="container">
   {{outlet}}
   <footer class="app-footer">
-    <a href="#">Home</a>
+    <ul>
+      <li>
+        {{#if App.currentSlide}}
+          <a href="#">Back to the Start</a>
+        {{else}}
+          &nbsp;
+        {{/if}}
+      </li>
+      <li>
+        Created by <a href="http://twitter.com/mutewinter">Jeremy Mack</a>
+      </li>
+      <li>
+        {{#if App.currentSlide}}
+          {{App.slidePositionText}}
+        {{else}}
+          &nbsp;
+        {{/if}}
+      </li>
+    </ul>
   </footer>
 </div>

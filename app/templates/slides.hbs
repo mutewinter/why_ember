@@ -1,4 +1,10 @@
-<h1>{{content.length}} Slides</h1>
+<div class="banner">
+  <h1>Why Ember?</h1>
+  <div class="subtitle">
+    Why should I use Ember.js? JavaScript MVC frameworks are plentiful. In this
+    presentation I will give you some compelling reasons to consider Ember.
+  </div>
+</div>
 {{#collection contentBinding="content" tagName="ul" itemTagName="li"}}
   {{#with view.content as slide}}
     <a {{action showSlide slide href=true}}
@@ -7,3 +13,5 @@
     </a>
   {{/with}}
 {{/collection}}
+<span class="pull-right">{{content.length}} Slides</span>
+
