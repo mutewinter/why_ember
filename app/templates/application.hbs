@@ -4,7 +4,7 @@
     <ul>
       <li>
         {{#if App.currentSlide}}
-          <a href="#">Back to the Start</a>
+        <a {{action showSlide App.firstSlide href=true}}>Back to the Start</a>
         {{else}}
           &nbsp;
         {{/if}}
@@ -14,7 +14,7 @@
       </li>
       <li>
         {{#if App.currentSlide}}
-          {{App.slidePositionText}}
+          {{App.currentSlidePosition}} / {{App.slides.length}}
         {{else}}
           &nbsp;
         {{/if}}

@@ -1,21 +1,30 @@
 # Public: Declare the main application. and export it.
 module.exports = Ember.Application.create
+  firstSlide: (->
+    @get('slides.firstObject')
+  ).property('slides.@each')
+
+  # Public: The next slide based on the index of this slide within the array of
+  # slides.
   nextSlide: (->
     slides = @get('slides')
     slideIndex = slides.indexOf(@get('currentSlide'))
     slides.objectAt(slideIndex + 1)
   ).property('currentSlide')
 
+  # Public: The previous slide based on the index of this slide within the
+  # array of slides.
   previousSlide: (->
     slides = @get('slides')
     slideIndex = slides.indexOf(@get('currentSlide'))
     slides.objectAt(slideIndex - 1)
   ).property('currentSlide')
 
-  slidePositionText: (->
+  # Public: The position of the slide in the slide deck.
+  #
+  # Returns the 1-indexed slide position.
+  currentSlidePosition: (->
     currentSlide = @get 'currentSlide'
     return unless currentSlide
     slidePosition = @get('slides').indexOf(currentSlide) + 1
-    totalSlides = @get('slides.length')
-    "#{slidePosition} / #{totalSlides}"
   ).property('currentSlide')
