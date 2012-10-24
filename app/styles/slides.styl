@@ -56,14 +56,25 @@ code
              down for the homepage.
 */
 
-.slide
-  margin 3px 4px 8px 4px
-
+.slide-content-container
   background-color slide-background-color
+  margin 3px 4px 8px 4px
   border-radius 0 0 5px 5px
   box-shadow 0 0 0px 1px rgba(0,0,0,0.3),
              0 0 0px 5px white,
              0 5px 4px black
+
+.slide
+  width 768px
+  margin auto
+
+  // Small enough to be the entire browser unless...
+  @media screen and (max-width: 768px)
+    width 100%
+
+  // We get too small, then we go back to having a width.
+  @media screen and (max-width: 300px)
+    width 500px
 
   h1
     width 100%
