@@ -1,4 +1,11 @@
+# Public: Initialize the application. This is the only file that is required
+# explicitly in index.html.
+
+# Defining App globally before the rest of the requires ensures we can use it
+# in those files explicitly requiring it.
 window.App = require("app")
+
+# The router doesn't live in a folder, so we require it explicitly.
 require "router"
 
 # The order in which each module should be required.
