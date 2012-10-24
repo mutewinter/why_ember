@@ -2,4 +2,3 @@
 App.SlideView = Ember.View.extend
   templateName: 'templates/slide'
   contentBinding: 'controller.content'
-
