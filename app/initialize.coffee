@@ -3,10 +3,10 @@
 
 # Defining App globally before the rest of the requires ensures we can use it
 # in those files explicitly requiring it.
-window.App = require("app")
+window.App = require('app')
 
 # The router doesn't live in a folder, so we require it explicitly.
-require "router"
+require 'router'
 
 # The order in which each module should be required.
 folderOrder = 'models data templates controllers views'.w()
