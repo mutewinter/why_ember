@@ -1,0 +1,16 @@
+<h1>Super</h1>
+
+<h2>No way, JavaScript has super?</h2>
+<h3>Nope, just Ember.</h3>
+
+<code class="block">
+OceanAnimals = Ember.Object.extend
+  phylum: -&gt;
+    'Phylum is '
+
+Squid = OceanAnimals.extend
+  phylum: -&gt;
+    @_super + ' what is a phylum'
+
+Squid.create().phylum() # Phylum is what is a phylum
+</code>

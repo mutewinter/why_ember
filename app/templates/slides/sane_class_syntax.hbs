@@ -1,0 +1,29 @@
+<h1>Sane Class Syntax</h1>
+
+<h2>Ember.Object.extend</h2>
+<code class="block">
+# Define the Class
+Squid = Ember.Object.extend
+  # Defaults
+  color: 'none'
+  wants: 'to be a potato'
+
+blackSquid = Squid.create(color: 'black')
+</code>
+
+<h2>Ember.Object.create</h2>
+<code class="block">
+# Skip Straight to an Object Syntax
+blackSquid = Ember.Object.create(
+  color: 'black'
+  wants: 'to be a potato'
+)
+
+blackSquid.get('color') # 'black'
+</code>
+
+<footer class="subtle text-center">
+  <a href="http://www.youtube.com/watch?v=AkjcxlAuyLI&t=12m22s">
+    What do you mean sane?
+  </a>
+</footer>

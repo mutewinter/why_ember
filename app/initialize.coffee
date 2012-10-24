@@ -19,4 +19,8 @@ folderOrder.forEach (folder) ->
     new RegExp("^#{folder}").test(moduleName)
   ).forEach((matchingModule) -> require(matchingModule))
 
+# Create the slides from the raw slide objects and add them to the App object.
+App.set 'slides', App.Slide.slideOrder.map (slideName) ->
+  App.Slide.create(slideName: slideName)
+
 App.initialize()

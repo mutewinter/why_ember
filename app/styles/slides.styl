@@ -38,16 +38,29 @@ ul.slide-list
   // From http://subtlepatterns.com/medic-packaging-foil/
   background-image url('/img/foil.png')
 
+code
+  background-color rgba(253,253,253,0.5)
+  border-radius 5px
+  padding 2px 4px
+  border 1px solid #ccc
+
+  &.block
+    display inline-block
+    white-space pre
+
 /*
   Slide Content
   The inner portion of the slide containing all of the content.
+
+  .preview - The smaller version of the slide with certain details toned
+             down for the homepage.
 */
 
 .slide
-  background-color slide-background-color
-
-  border-radius 0 0 5px 5px
   margin 3px 4px 8px 4px
+
+  background-color slide-background-color
+  border-radius 0 0 5px 5px
   box-shadow 0 0 0px 1px rgba(0,0,0,0.3),
              0 0 0px 5px white,
              0 5px 4px black
@@ -59,12 +72,29 @@ ul.slide-list
     border-bottom: 1px solid rgba(0,0,0,0.2)
 
   ul
+    list-style-type none
+
+    // Custom Bullets
+    li:before
+      content ">"
+      color #999
+      margin-right 20px
+
     li
       font-size 28px
       font-size 1.8em
-      line-height 48px
+      margin 18px 0
       &.small
         font-size 1.0em
+
+  .subtle
+    font-size 0.8em
+    a
+      color #999
+      border-color #999
+
+  footer
+    padding 5px 10px
 
   &.preview
     fake-width = 800px
@@ -96,13 +126,6 @@ ul.slide-list
   Styles that apply to only a single slide.
 */
 
-.floating-because
-  font-size 2em
-
-.because-target
-  //margin-left 80px
-  //list-style none
-  position relative
 
 /*
   Slide Controls
