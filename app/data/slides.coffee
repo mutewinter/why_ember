@@ -3,6 +3,7 @@
 App.Slide.reopenClass
   slideOrder: [
     'why_ember'
+    'eliminates_dependancies'
     'sane_class_syntax'
     'super'
     'automatically_updating_templates'
