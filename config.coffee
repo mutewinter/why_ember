@@ -6,7 +6,6 @@ path = require 'path'
 exports.config =
 
   files:
-
     javascripts:
       defaultExtension: 'js'
       joinTo:
@@ -31,6 +30,16 @@ exports.config =
       precompile: true
       defaultExtension: 'hbs'
       joinTo: 'javascripts/app.js' : /^app/
+
+  modules:
+    wrapper: (path, data) ->
+      """
+window.require.define({#{path}: function(exports, require, module) {
+  #{data}
+}});
+window.moduleNames.push(#{path});
+\n\n
+      """
 
   server:
     port: 3333
