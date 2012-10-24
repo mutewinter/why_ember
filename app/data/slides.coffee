@@ -1,7 +1,5 @@
 # Public: The slide objects are loaded on the App object so they can be queried
 # globally.
-App = require('app')
-
 App.set 'slides', [
   App.Slide.create slideName: 'why_ember'
   App.Slide.create slideName: 'automatically_updating_templates'

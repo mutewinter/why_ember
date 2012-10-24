@@ -1,4 +1,4 @@
-App = require('app')
+# Public: The model object that represents a single slide.
 App.Slide = Ember.Object.extend
   classNames: 'slide-container'.w()
 

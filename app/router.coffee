@@ -1,6 +1,4 @@
 # Public: The one and only Ember router. We move between all slide states here.
-App = require('app')
-
 App.Router = Ember.Router.extend
   # Logs transitions to the console
   enableLogging: true
