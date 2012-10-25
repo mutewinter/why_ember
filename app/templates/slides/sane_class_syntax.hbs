@@ -2,18 +2,20 @@
 
 <h2>Ember.Object.extend</h2>
 <code class="block">
-# Define the Class
-Squid = Ember.Object.extend
-  # Defaults
-  color: 'none'
-  wants: 'to be a potato'
+# Define the Class with Instance Methods
+Squid = Ember.Object.extend()
 
-blackSquid = Squid.create(color: 'black')
+# Now we make a class method.
+Squid.reopenClass
+  squidBuilder: (color, wants) -&gt;
+    Squid.create(color: color, wants: wants)
+
+blackSquid = Squid.squidBuilder('green', 'to derp less')
 </code>
 
 <h2>Ember.Object.create</h2>
 <code class="block">
-# Skip Straight to an Object Syntax
+# Skip Straight to an Object Instance
 blackSquid = Ember.Object.create(
   color: 'black'
   wants: 'to be a potato'
