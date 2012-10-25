@@ -1,10 +1,10 @@
 @import 'nib'
 
-slide-background-color = rgba(250,206,162,0.5)
+slide-background-color = rgb(250,206,162)
 
 /*
-  Slides
-  The overview of slides shown on the homepage.
+  Slide List
+  The small set of slides shown on the homepage.
 */
 
 ul.slide-list
@@ -22,22 +22,6 @@ ul.slide-list
     width 250px
     height 200px
 
-/*
-  Slide
-  The entire slide page, including its controls.
-*/
-
-.slide-container
-  height 500px
-
-/*
-  Slide Container
-  The container that holds a single slide.
-*/
-.slide-background
-  // From http://subtlepatterns.com/medic-packaging-foil/
-  background-image url('/img/foil.png')
-
 code
   background-color rgba(253,253,253,0.5)
   border-radius 5px
@@ -49,20 +33,9 @@ code
     white-space pre
 
 /*
-  Slide Content
-  The inner portion of the slide containing all of the content.
-
-  .preview - The smaller version of the slide with certain details toned
-             down for the homepage.
+  Slide
+  The body of a single slide.
 */
-
-.slide-content-container
-  background-color slide-background-color
-  margin 3px 4px 8px 4px
-  border-radius 0 0 5px 5px
-  box-shadow 0 0 0px 1px rgba(0,0,0,0.3),
-             0 0 0px 5px white,
-             0 5px 4px black
 
 .slide
   width 768px
@@ -112,30 +85,6 @@ code
   footer
     padding 5px 10px
 
-  &.preview
-    fake-width = 800px
-    fake-height = 500px
-    // The psuedo height and width so the slides render their content
-    width fake-width
-    height fake-height
-
-    transform scale(0.3) translate((-1 * fake-width), (-1 * fake-height))
-    overflow hidden
-
-    box-shadow 0 0 5px 5px black
-
-    &.flash
-      animation flash 1.0s ease-in
-
-    &:hover
-      cursor pointer
-
-
-@keyframes flash
-  0%
-    box-shadow 0 0 5px 10px yellow
-  100%
-    box-shadow 0 0 5px 5px black
 
 /*
   Slide-Specific Styles
@@ -177,3 +126,60 @@ code
   a
     margin 0 10px
 
+/*
+  Slide Content Container
+  The container for the slide, which contains the overlay color for the slide.
+
+  .preview - The smaller version of the slide with certain details toned
+             down for the homepage.
+*/
+
+.slide-container
+  background-color rgba(slide-background-color, 0.5)
+  margin 3px 4px 8px 4px
+  border-radius 0 0 5px 5px
+  box-shadow 0 0 0px 1px rgba(0,0,0,0.3),
+             0 0 0px 5px white,
+             0 5px 4px black
+
+  &.preview
+    // Give the appearnce of the same color as the transparent one used above.
+    // We do this since we don't show the background texture in the preview.
+    background-color lighten(slide-background-color, 30%)
+
+    // Fixed height and width so the slides render their content.
+    fixed-width = 800px
+    fixed-height = 500px
+    width fixed-width
+    height fixed-height
+
+    transform scale(0.3) translate((-1 * fixed-width), (-1 * fixed-height))
+    overflow hidden
+
+    box-shadow 0 0 5px 5px black
+
+    &.flash
+      animation flash 1.0s ease-in
+
+    &:hover
+      cursor pointer
+
+    // Override the dynamic slide width for the preview.
+    .slide
+      width 100%
+
+@keyframes flash
+  0%
+    box-shadow 0 0 5px 10px yellow
+  100%
+    box-shadow 0 0 5px 5px black
+
+
+/*
+  Slide Background
+  A wrapper around the slide to contain the background image so the tint can be
+  changed in the overlay container.
+*/
+.slide-background
+  // From http://subtlepatterns.com/medic-packaging-foil/
+  background-image url('/img/foil.png')
