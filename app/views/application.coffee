@@ -13,6 +13,6 @@ App.ApplicationView = Ember.View.extend
     router = App.get('router')
     switch e.which
       when 37, 38 # Left, Up
-        router.showSlide router, App.get('previousSlide')
+        router.goToSlide router, App.get('previousSlide')
       when 39, 40 # Right, Down
-        router.showSlide router, App.get('nextSlide')
+        router.goToSlide router, App.get('nextSlide')

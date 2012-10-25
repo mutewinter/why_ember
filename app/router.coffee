@@ -2,7 +2,9 @@
 App.Router = Ember.Router.extend
   # Logs transitions to the console
   enableLogging: true
-  showSlide: Ember.Route.transitionTo('slides.show')
+
+  goToSlide: Ember.Route.transitionTo('slides.show')
+  goHome: Ember.Route.transitionTo('index')
 
   root: Ember.Route.extend
     # Loading state, entered when there are promises returned by deserialize.

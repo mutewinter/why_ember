@@ -1,7 +1,7 @@
 <ul class="slide-controls">
-  <li {{action showSlide App.previousSlide}}>
+  <li {{action goToSlide App.previousSlide}}>
     {{#if App.previousSlide}}
-    <a {{action showSlide App.previousSlide href=true}}>
+    <a {{action goToSlide App.previousSlide href=true}}>
       &lt; {{App.previousSlide.name}}
     </a>
     {{else}}
@@ -9,13 +9,13 @@
     {{/if}}
   </li>
   <li>
-    <div class="slide-controls-home">
-      <a href="#" >Home</a>
+    <div {{action goHome}} class="slide-controls-home">
+      <a {{action goHome href=true}} >Home</a>
     </div>
   </li>
-  <li {{action showSlide App.nextSlide}}>
+  <li {{action goToSlide App.nextSlide}}>
     {{#if App.nextSlide}}
-    <a {{action showSlide App.nextSlide href=true}}>
+    <a {{action goToSlide App.nextSlide href=true}}>
       {{App.nextSlide.name}} &gt;
     </a>
     {{else}}

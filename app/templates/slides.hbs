@@ -7,7 +7,7 @@
 </div>
 {{#collection class="slide-list" contentBinding="content" tagName="ul" itemTagName="li"}}
   {{#with view.content as slide}}
-    <div {{action showSlide slide href=true}}
+    <div {{action goToSlide slide href=true}}
       {{bindAttr class=":slide-container :preview slide.isLastShownSlide:flash"}}>
       {{view App.SlidePreviewView contentBinding="slide"}}
     </div>
