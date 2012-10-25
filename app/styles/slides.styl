@@ -98,9 +98,9 @@ code
 */
 .slide-controls
   background-color rgba(255,255,255,0.5)
-
-  padding 10px 0
+  padding 0
   margin 0
+
   width 100%
   clearfix()
 
@@ -114,17 +114,35 @@ code
 
   li
     float left
-    width 20%
+
+    padding 10px 0
+
     text-align center
+    width 20%
+
     &:first-child
       text-align left
       width 40%
     &:last-child
       text-align right
       width 40%
+    &:hover
+      cursor pointer
+      a
+        font-weight bold
+        animation under-jiggle 0.4s ease-in-out
 
   a
     margin 0 10px
+
+@keyframes under-jiggle
+  0%
+    box-shadow 0 1px 0px -1px black
+  50%
+    box-shadow 0 3px 0px -1px black
+  100%
+    box-shadow 0 1px 0px -1px black
+
 
 /*
   Slide Content Container
