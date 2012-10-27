@@ -43,4 +43,4 @@ App.Router = Ember.Router.extend
         connectOutlets: (router, slide) ->
           controller = router.get('applicationController')
           App.set('currentSlide', slide)
-          controller.connectOutlet 'slide', slide
+          controller.connectOutlet 'slideContainer', slide

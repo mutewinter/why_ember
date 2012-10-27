@@ -1,0 +1,28 @@
+<ul class="slide-controls">
+  <li {{action goToSlide App.previousSlide}}>
+    {{#if App.previousSlide}}
+    <a {{action goToSlide App.previousSlide href=true}}>
+      &lt; {{App.previousSlide.title}}
+    </a>
+    {{else}}
+      &nbsp;
+    {{/if}}
+  </li>
+  <li {{action goHome}} class="slide-controls-home">
+    <a {{action goHome href=true}} >Home</a>
+  </li>
+  <li {{action goToSlide App.nextSlide}}>
+    {{#if App.nextSlide}}
+    <a {{action goToSlide App.nextSlide href=true}}>
+      {{App.nextSlide.title}} &gt;
+    </a>
+    {{else}}
+      &nbsp;
+    {{/if}}
+  </li>
+</ul>
+<div class="slide-background">
+  <div class="slide-container">
+    {{view App.SlideView contentBinding="content"}}
+  </div>
+</div>

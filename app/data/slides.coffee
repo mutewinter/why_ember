@@ -2,13 +2,13 @@
 # globally.
 App.Slide.reopenClass
   slideOrder: [
-    'why_ember'
-    'eliminates_dependancies'
-    'sane_class_syntax'
-    'super'
-    'automatically_updating_templates'
-    'computed_properties'
-    'class_bindings'
-    'attribute_bindings'
-    'third_party_javascript'
+    { templateName: 'why_ember', title: 'Why Ember?' }
+    { templateName: 'eliminates_dependancies', title: 'Eliminates Dependancies' }
+    { templateName: 'sane_class_syntax', title: 'Sane Class Syntax' }
+    { templateName: 'super', title: 'Super' }
+    { templateName: 'automatically_updating_templates', title: 'Automatically Updating Templates' }
+    { templateName: 'computed_properties', title: 'Computed Properties' }
+    { templateName: 'class_bindings', title: 'Class Bindings' }
+    { templateName: 'attribute_bindings', title: 'Attribute Bindings' }
+    { templateName: 'third_party_javascript', title: 'Third Party JavaScript' }
   ]

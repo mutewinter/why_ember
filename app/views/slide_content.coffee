@@ -1,6 +1,5 @@
-# Public: The content of the slide, headings, bullets, images, anything.
+# Public: The content of the slide that appears below the title.
 App.SlideContentView = Ember.View.extend
   tagName: 'section'
-  classNames: 'slide'.w()
-
-  templateNameBinding: 'content.templateName'
+  classNames: 'slide-content'
+  templateNameBinding: 'content.templatePath'

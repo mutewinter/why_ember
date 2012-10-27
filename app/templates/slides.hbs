@@ -6,10 +6,10 @@
   </div>
 </div>
 {{#collection class="slide-list" contentBinding="content" tagName="ul" itemTagName="li"}}
-  {{#with view.content as slide}}
-    <div {{action goToSlide slide href=true}}
-      {{bindAttr class=":slide-container :preview slide.isLastShownSlide:flash"}}>
-      {{view App.SlidePreviewView contentBinding="slide"}}
+  {{#with view.content as content}}
+    <div {{action goToSlide content}}
+      {{bindAttr class=":slide-container :preview content.isLastShownSlide:flash"}}>
+      {{view App.SlideView contentBinding="content"}}
     </div>
   {{/with}}
 {{/collection}}
