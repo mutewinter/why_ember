@@ -58,11 +58,6 @@ code
   ul
     list-style-type none
 
-    &.check-em
-      li:after
-        content '✓'
-        margin-left 20px
-
     // Custom Bullets
     li:before
       content ">"
@@ -94,6 +89,10 @@ code
 .sane
   margin-top 20px
 
+// Put checkmarks after all of the bullets in this list.
+.slide ul.check-em li:after
+  content '✓'
+  margin-left 20px
 
 /*
   Slide Controls
