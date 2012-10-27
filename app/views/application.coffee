@@ -10,6 +10,9 @@ App.ApplicationView = Ember.View.extend
     $(document).on('keyup', @documentKeyUp)
 
   documentKeyUp: (e) ->
+    # Don't try to advanced slides when on the home page.
+    return unless App.get('currentSlide')
+
     router = App.get('router')
     switch e.which
       when 37, 38 # Left, Up
