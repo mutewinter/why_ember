@@ -1,10 +1,8 @@
 # Public: A view containing code that should be made editable with CodeMirror.
 App.CodeView = Ember.View.extend
-  tagName: 'textarea'
-  classNames: 'block'
-
   # Defaults
   language: 'coffeescript'
+  classNameBindings: 'noButtons'.w()
 
   # ------------
   # Ember Events
@@ -12,16 +10,22 @@ App.CodeView = Ember.View.extend
 
   didInsertElement: ->
     # Trim the trailing and leading whitespace from the code before we draw it.
-    @$().val($.trim @$().val())
+    code = $.trim @$().text()
+    @$().text('')
 
-    editor = CodeMirror.fromTextArea(@get('element'),
+    codeMirrorOptions =
       lineNumbers: true
       mode: @get('language')
+      value: code
       onKeyEvent: (editor, rawEvent) =>
         event = jQuery.Event(rawEvent)
         # We want to keep this event from triggering a slide change.
         event.stopPropagation()
-    )
+
+    editor = CodeMirror((element) =>
+      @$().append(element)
+    , codeMirrorOptions)
+
     @set('editor', editor)
 
     if @get('height')?
