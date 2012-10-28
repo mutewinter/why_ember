@@ -1,6 +1,6 @@
-App.CodeButtonsView = Ember.View.extend
-  templateName: 'templates/code_buttons'
-  classNames: 'code-buttons'
+App.CodeToolbarView = Ember.View.extend
+  templateName: 'templates/code_toolbar'
+  classNames: 'code-toolbar'
 
   switchLanguage: ->
     @get('codeView').switchLanguage()

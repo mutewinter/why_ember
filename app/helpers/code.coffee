@@ -14,7 +14,7 @@ Handlebars.registerHelper 'code', (options) ->
   options.hash = {}
   # We pass the code view as a reference to the buttons view so it can directly
   # call actions on it.
-  Ember.Handlebars.helpers.view.call(this, 'App.CodeButtonsView', options)
+  Ember.Handlebars.helpers.view.call(this, 'App.CodeToolbarView', options)
   options.hash._parentView.get('childViews.lastObject').set('codeView', codeView)
 
   # Note, without explicitly returning null we get errant <app.codebuttonsview>

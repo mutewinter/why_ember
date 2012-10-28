@@ -32,9 +32,9 @@ App.CodeView = Ember.View.extend
   willDestroyElement: ->
     console.log 'killing the element'
 
-  # ------------
-  # Code Methods
-  # ------------
+  # ---------------
+  # Code Conversion
+  # ---------------
   compileJavaScript: (code) ->
     try
       compiledJavaScript = CoffeeScript.compile code, bare: on
@@ -57,6 +57,23 @@ App.CodeView = Ember.View.extend
       javaScriptCode = @compileJavaScript(currentCode)
       @setCode(javaScriptCode)
       @set('language', 'javascript')
+
+  # ---------------
+  # Code Evaluation
+  # ---------------
+
+  runCode: -> @evalJavaScript(@get('editor').getValue())
+
+  # Eval the compiled js.
+  evalJavaScript: (javaScriptCode) ->
+    try
+      fake = {}
+      fn = (new Function( "(this) { #{javaScriptCode} }"))
+      fn.call(fake)
+      console.log fake
+    catch error
+      # TODO Show the error on the page, rather than throwing it.
+      throw error
 
   changeEditorMode: (->
     language = @get('language')
