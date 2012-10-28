@@ -40,6 +40,11 @@ App.CodeView = Ember.View.extend
   # Code Conversion
   # ---------------
   compileJavaScript: (code) ->
+    return @get('compiledJavaScript') if @get('coffeeScriptCode') == code
+
+    # Save the CoffeeScript so we can swith back to it later.
+    @set('coffeeScriptCode', code)
+
     try
       compiledJavaScript = CoffeeScript.compile code, bare: on
     catch error
@@ -56,9 +61,7 @@ App.CodeView = Ember.View.extend
       @setCode(@get('coffeeScriptCode'))
       @set('language', 'coffeescript')
     else if @get('isCoffeeScript')
-      currentCode = @code()
-      @set('coffeeScriptCode', currentCode)
-      javaScriptCode = @compileJavaScript(currentCode)
+      javaScriptCode = @compileJavaScript(@code())
       @setCode(javaScriptCode)
       @set('language', 'javascript')
 
