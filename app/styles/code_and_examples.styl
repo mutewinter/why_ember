@@ -12,9 +12,15 @@ code-width = 600px
 .CodeMirror
   width code-width
   background-color rgba(#fdfdfd, 0.5)
-  border-radius 5px
+  border-radius 5px 5px 0 0
   padding 2px 4px
-  border 1px solid #ccc
+
+  border-top 1px solid #ccc
+  border-right 1px solid #ccc
+  border-left 1px solid #ccc
+
+.no-buttons .CodeMirror
+  border-radius 5px
 
 .CodeMirror-scroll
   height auto
@@ -32,14 +38,32 @@ code-width = 600px
   the code view.
 */
 .code-toolbar
-  width code-width
-  margin-top 5px
-  // Same built-in padding as CodeMirror
-  padding 0 10px
+  text-color = #888
+  // 10px is due to CodeMirror adjusting width after the element is created.
+  width code-width + 8px
   font-size 0.8em
-  a
-    color = #888
-    color color
-    border-color color
+  clearfix()
+  background-color rgba(#fdfdfd, 0.5)
+  border 1px solid #ccc
+  border-radius 0 0 5px 5px
+
+  .messages
+    padding-left 5px
+    color text-color
+    width 400px
+    float left
+
+    &.error
+      background-color rgba(red, 0.3)
+      color darken(red, 30%)
+
+  .buttons
     float right
-    line-height 0.9em
+    border-left 1px solid #ccc
+    padding 0 5px
+    a
+      color text-color
+      border none
+      &:hover
+        border-bottom 1px solid text-color
+      line-height 0.9em
