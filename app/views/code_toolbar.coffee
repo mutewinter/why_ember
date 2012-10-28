@@ -36,5 +36,5 @@ App.CodeToolbarView = Ember.View.extend
     else if @get('codeView.isCoffeeScript')
       'View as JavaScript'
     else
-      'View as CoffeeScript'
+      'Back to CoffeeScript'
   ).property('codeView.language', 'hasError')
