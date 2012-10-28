@@ -1,8 +1,11 @@
 # Public: A view containing code that should be made editable with CodeMirror.
+ERROR_REGEX = /.*?Parse error on line (\d+): (.+)/
+
 App.CodeView = Ember.View.extend
   # Defaults
   language: 'coffeescript'
-  classNameBindings: 'noButtons'.w()
+  classNames: 'code-view'
+  classNameBindings: 'noToolbar isFocused:focused'.w()
 
   # ------------
   # Ember Events
@@ -18,9 +21,11 @@ App.CodeView = Ember.View.extend
       mode: @get('language')
       value: code
       onKeyEvent: (editor, rawEvent) =>
-        event = jQuery.Event(rawEvent)
-        # We want to keep this event from triggering a slide change.
-        event.stopPropagation()
+        # Keep this event from triggering a slide change.
+        jQuery.Event(rawEvent).stopPropagation()
+      onChange: => @compileJavaScript() if @get('isCoffeeScript')
+      onFocus: => @set('isFocused', true)
+      onBlur: => @set('isFocused', false)
 
     editor = CodeMirror((element) =>
       @$().append(element)
@@ -33,37 +38,64 @@ App.CodeView = Ember.View.extend
     else
       @fixEditorHeight()
 
-  willDestroyElement: ->
-    console.log 'killing the element'
-
   # ---------------
   # Code Conversion
   # ---------------
+
   compileJavaScript: (code) ->
+    code = @code() unless code?
     return @get('compiledJavaScript') if @get('coffeeScriptCode') == code
 
     # Save the CoffeeScript so we can swith back to it later.
     @set('coffeeScriptCode', code)
 
     try
-      compiledJavaScript = CoffeeScript.compile code, bare: on
+      compiledJavaScript = CoffeeScript.compile(code, bare: on)
+      @clearError()
     catch error
-      console.error error.message
+      @clearError()
+      @displayError(error.message)
 
-    if compiledJavaScript
-      @set('compiledJavaScript', compiledJavaScript)
+    @set('compiledJavaScript', compiledJavaScript)
 
     compiledJavaScript
 
-  # Public: Switch the language of the compiled code.
+  # Internal: Clear the error message since we compiled successfully.
+  #
+  # Returns nothing.
+  clearError: ->
+    @set('lastError', null)
+
+    if highlightedLine = @get('highlightedLine')
+      @get('editor').setLineClass(highlightedLine, null, null)
+
+  # Internal: Display a CoffeeScript compilation error message.
+  #
+  # Returns nothing.
+  displayError: (message) ->
+    editor = @get('editor')
+
+    if matches = message.match(ERROR_REGEX)
+      lineNumber = parseInt(matches[1])
+      error = matches[2]
+      highlightedLine = editor.setLineClass(lineNumber - 1, 'error', 'error')
+      @set('highlightedLine', highlightedLine)
+
+    @set('lastError', message)
+
+
+  # Public: Switch the language of the code shown in the editor.
+  #
+  # Returns nothing.
   switchLanguage: ->
     if @get('isJavaScript')
       @setCode(@get('coffeeScriptCode'))
       @set('language', 'coffeescript')
     else if @get('isCoffeeScript')
       javaScriptCode = @compileJavaScript(@code())
-      @setCode(javaScriptCode)
-      @set('language', 'javascript')
+      if javaScriptCode?
+        @set('language', 'javascript')
+        @setCode(javaScriptCode)
 
   # ---------------
   # Code Evaluation
@@ -98,7 +130,7 @@ App.CodeView = Ember.View.extend
   # -------
 
   code: -> @get('editor').getValue()
-  setCode: (code) -> @get('editor').setValue(code)
+  setCode: (code) -> @get('editor').setValue($.trim code)
 
   # Internal: Set the height of the editor and its scroller element.
   #

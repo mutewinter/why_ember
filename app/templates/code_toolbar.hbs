@@ -1,13 +1,8 @@
-<div class="messages">
-  No Errors
+<div {{bindAttr class=":messages view.hasError:error"}}>
+  {{view.errorMessage}}
 </div>
 <div class="buttons">
   <a {{action switchLanguage target="view"}} href="#">
-    {{#if view.isCoffeeScript}}
-      View as JavaScript
-    {{else}}
-      Back to CoffeeScript
-    {{/if}}
+    {{view.switchText}}
   </a>
 </div>
-

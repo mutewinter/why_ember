@@ -4,7 +4,7 @@ Handlebars.registerHelper 'code', (options) ->
   Ember.Handlebars.helpers.view.call(this, 'App.CodeView', options)
 
   # Don't draw the buttons view if the user doesn't want it.
-  return if options.hash?.noButtons
+  return if options.hash?.noToolbar
 
   # The last item in the child views array for the parent will now be the
   # App.CodeView created on the line above.
