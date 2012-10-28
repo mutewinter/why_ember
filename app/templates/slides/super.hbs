@@ -1,13 +1,51 @@
-<h3>Nope, just Ember.</h3>
+<h2>Vanilla JavaScript</h2>
+<p>Let's flex our Google.</p>
+{{#code language="javascript" height=154 noButtons=true}}
+//class parent
+function parent(param_1){
+    console.log("parent " + param_1);
+    this.param = param_1;
+}
 
-<code class="block">
+parent.prototype.getObjWithParam = function(val) {
+    console.log("value in parent class "+val);
+    console.log("Constructor parameter : "+this.param);
+};
+
+//class child
+function child(param_1){
+    console.log("child " + param_1);
+    this.constructor(param_1);
+}
+child.prototype = new parent();
+child.prototype.getObjWithParam = function(val) {
+    console.log("value in child class "+val);
+    val = Number(val)+1;
+    parent.prototype.getObjWithParam.call(this, [val]);
+}
+
+//class grandChild
+function grandChild(param_1){
+    console.log("grandChild " + param_1);
+    this.constructor(param_1);
+}
+grandChild.prototype = new child();
+{{/code}}
+<p>
+  Sweet mother, that <a href="http://stackoverflow.com/q/8701114">looks</a>
+  <a href="http://cl.ly/KUaB">compilcated</a>.
+</p>
+
+<h2>Ember</h2>
+
+{{#code}}
 OceanAnimals = Ember.Object.extend
-  phylum: -&gt;
+  phylum: ->
     'Phylum is '
 
 Squid = OceanAnimals.extend
-  phylum: -&gt;
-    @_super + ' what is a phylum'
+  phylum: ->
+    @_super() + ' Derpysquidanimalus'
 
-Squid.create().phylum() # Phylum is what is a phylum
-</code>
+Squid.create().phylum() # Phylum is Derpysquidanimalus
+{{/code}}

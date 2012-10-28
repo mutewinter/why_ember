@@ -1,0 +1,44 @@
+// Styles for code and examples displayed in slides.
+@import 'nib'
+
+// Variables
+orangina = #f24730
+code-width = 600px
+
+/*
+  Code Mirror
+  Styles for the Code Mirror regions.
+*/
+.CodeMirror
+  width code-width
+  background-color rgba(#fdfdfd, 0.5)
+  border-radius 5px
+  padding 2px 4px
+  border 1px solid #ccc
+
+.CodeMirror-scroll
+  height auto
+
+.CodeMirror-focused
+  box-shadow 0 0 4px 2px rgba(orangina, 0.8)
+
+.CodeMirror-gutter
+  background-color rgba(white, 0.5)
+  border-right 1px solid #ccc
+
+/*
+  Code Buttons
+  The buttons that appear below the code area.
+*/
+.code-buttons
+  width code-width
+  margin-top 5px
+  // Same built-in padding as CodeMirror
+  padding 0 10px
+  font-size 0.8em
+  a
+    color = #888
+    color color
+    border-color color
+    float right
+    line-height 0.9em

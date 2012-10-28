@@ -18,6 +18,10 @@ exports.config =
           'vendor/scripts/jquery-1.8.2.js'
           'vendor/scripts/handlebars-1.0.0.beta.6.js'
           'vendor/scripts/ember-latest.js'
+          'vendor/scripts/coffee-script.js'
+          'vendor/scripts/codemirror.js'
+          'vendor/scripts/codemirror-coffeescript.js'
+          'vendor/scripts/codemirror-javascript.js'
         ]
 
     stylesheets:
