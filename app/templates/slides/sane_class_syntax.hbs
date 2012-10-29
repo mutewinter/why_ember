@@ -5,8 +5,8 @@ Squid = Ember.Object.extend()
 
 # Now we make a class method.
 Squid.reopenClass
-squidBuilder: (color, wants) ->
-    Squid.create(color: color, wants: wants)
+  squidBuilder: (color, wants) ->
+    @create(color: color, wants: wants)
 
 blackSquid = Squid.squidBuilder('green', 'to derp less')
 {{/code}}
