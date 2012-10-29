@@ -169,12 +169,10 @@ ul.slide-list
     background-color lighten(slide-background-color, 30%)
 
     // Fixed height and width so the slides render their content.
-    fixed-width = 800px
     fixed-height = 500px
-    width fixed-width
     height fixed-height
 
-    transform scale(0.3) translate((-1 * fixed-width), (-1 * fixed-height))
+    transform scale(0.3) translate((-1 * slide-width), (-1 * fixed-height))
     overflow hidden
 
     box-shadow 0 0 5px 5px black
