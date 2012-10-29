@@ -154,6 +154,16 @@ ul.slide-list
              0 slide-margin+1 4px black
 
   &.preview
+    // Overlay to keep the user from interacting with the thumbnails.
+    &:before
+      content ''
+      background-color transparent
+      position fixed
+      z-index 10
+      display block
+      width 100%
+      height 100%
+
     // Give the appearnce of the same color as the transparent one used above.
     // We do this since we don't show the background texture in the preview.
     background-color lighten(slide-background-color, 30%)
