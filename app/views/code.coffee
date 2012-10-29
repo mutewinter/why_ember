@@ -5,7 +5,7 @@ App.CodeView = Ember.View.extend
   # Defaults
   language: 'coffeescript'
   classNames: 'code-view'
-  classNameBindings: 'noToolbar isFocused:focused'.w()
+  classNameBindings: 'noToolbar isFocused:focused language'.w()
 
   # ------------
   # Ember Events
@@ -30,8 +30,8 @@ App.CodeView = Ember.View.extend
     editor = CodeMirror((element) =>
       @$().append(element)
     , codeMirrorOptions)
-
     @set('editor', editor)
+    @changeEditorMode(@get('language'))
 
     if @get('height')?
       @setEditorHeight(@get('height'))
@@ -114,16 +114,18 @@ App.CodeView = Ember.View.extend
       # TODO Show the error on the page, rather than throwing it.
       throw error
 
-  changeEditorMode: (->
-    language = @get('language')
+  observeLanguage: (->
+    @changeEditorMode(@get('language'))
+  ).observes('language')
+
+  changeEditorMode: (language) ->
     editor = @get('editor')
     editor.setOption('mode', language)
 
-    if language == 'javascript'
+    if language is 'javascript'
       editor.setOption('readOnly', true)
     else
       editor.setOption('readOnly', false)
-  ).observes('language')
 
   # -------
   # Helpers
@@ -148,10 +150,10 @@ App.CodeView = Ember.View.extend
   fixEditorHeight: ->
     @setEditorHeight $(@get('editor').getScrollerElement()).height()
 
-
   # -------------------
   # Computed Properties
   # -------------------
+
   isJavaScript: (->
     @get('language') == 'javascript'
   ).property('language')

@@ -1,7 +1,7 @@
 App.CodeToolbarView = Ember.View.extend
   templateName: 'templates/code_toolbar'
   classNames: 'code-toolbar'
-  classNameBindings: 'isFocused:focused'.w()
+  classNameBindings: 'isFocused:focused language'.w()
 
   # Public: Switch the language of the cooresponding code view.
   #
@@ -13,6 +13,7 @@ App.CodeToolbarView = Ember.View.extend
   # Computed Properties
   # -------------------
 
+  languageBinding: 'codeView.language'
   isCoffeeScriptBinding: 'codeView.isCoffeeScript'
   isJavaScriptBinding: 'codeView.isJavaScript'
   isFocusedBinding: 'codeView.isFocused'
@@ -34,7 +35,8 @@ App.CodeToolbarView = Ember.View.extend
     if @get('hasError')
       'Fix Error'
     else if @get('codeView.isCoffeeScript')
-      'View as JavaScript'
+      'View JavaScript'
     else
-      'Back to CoffeeScript'
+      'Edit CoffeeScript'
   ).property('codeView.language', 'hasError')
+
