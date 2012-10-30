@@ -203,3 +203,26 @@ ul.slide-list
   min-width slide-width
   // From http://subtlepatterns.com/medic-packaging-foil/
   background-image url('/img/foil.png')
+
+.application.wiggle-left .slide-background
+  position relative
+  animation wiggle-left 0.5s ease-in-out
+
+.application.wiggle-right .slide-background
+  position relative
+  animation wiggle-right 0.5s ease-in-out
+
+left-offset = -30px
+right-offset = 10px
+
+@keyframes wiggle-left
+  25%
+    left left-offset
+  50%
+    left right-offset
+
+@keyframes wiggle-right
+  25%
+    left (left-offset * -1)
+  50%
+    left (right-offset * -1)

@@ -51,16 +51,15 @@ a, a:visited
     color hover-color
     border-bottom 1px solid hover-color
 
-  &.flash
-    animation flash 1.0s ease-in
-
-@keyframes flash
-  0%
-    color yellow
-    border-bottom 1px solid yellow
-  100%
-    color link-color
-    border-bottom 1px solid link-color
+/*
+  Application
+  The container for the entire application.
+*/
+.application
+  // Overflow hidden to keep the screen from scrolling when wiggling a slide
+  // outside the container. Go ahead, try it. Press the right arrow on the last
+  // slide.
+  overflow hidden
 
 .app-footer
   width 100%
