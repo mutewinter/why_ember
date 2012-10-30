@@ -212,17 +212,17 @@ ul.slide-list
   position relative
   animation wiggle-right 0.5s ease-in-out
 
-left-offset = -30px
-right-offset = 10px
+first-offset = -30px
+second-offset = 10px
 
 @keyframes wiggle-left
   25%
-    left left-offset
+    margin-left first-offset
   50%
-    left right-offset
+    margin-left second-offset
 
 @keyframes wiggle-right
   25%
-    left (left-offset * -1)
+    margin-right (first-offset * -1)
   50%
-    left (right-offset * -1)
+    margin-right (second-offset * -1)
