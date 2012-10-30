@@ -11,6 +11,10 @@ App.CodeView = Ember.View.extend
   # Ember Events
   # ------------
 
+  # Internal: Callback that is called when the element is in the DOM and we
+  # are free to modify it with external JavaScript.
+  #
+  # Returns nothing.
   didInsertElement: ->
     # Trim the trailing and leading whitespace from the code before we draw it.
     code = $.trim @$().text()
