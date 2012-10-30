@@ -2,7 +2,7 @@
 @import 'nib'
 
 // Variables
-code-width = 600px
+code-width = 550px
 border-color = #ccc
 focused-border-color = black
 subtle-text-color = #888
@@ -92,6 +92,7 @@ subtle-text-color = #888
   .focused - Highlight the borders when focused.
 */
 .code-toolbar
+  buttons-width = 120px
   // Extra width is due to CodeMirror adjusting width.
   width code-width + 8px
   font-size 0.8em
@@ -102,7 +103,7 @@ subtle-text-color = #888
   overflow hidden
 
   .messages
-    width 470px
+    width code-width - 120px
     padding-left 5px
     color subtle-text-color
     float left
@@ -114,7 +115,7 @@ subtle-text-color = #888
       color darken(red, 30%)
 
   .buttons
-    width 20%
+    width buttons-width - 8px
     float right
     padding 0 5px
     text-align center
@@ -129,3 +130,47 @@ subtle-text-color = #888
   &.focused:not(.javascript)
     border-color focused-border-color
     border-top: 1px solid border-color
+
+
+/*
+  Squid
+  The squid example view, which will be modified by the user in the code
+  exapmles.
+*/
+
+.squid
+  squid-height = 100px
+
+  max-width 160px
+  overflow hidden
+  margin-top -144px
+  display inline-block
+
+  position relative
+  float right
+  left px
+
+  border 1px solid black
+  font-size 0.8em
+  background-color #ddd
+
+  img
+    margin auto
+    display block
+    width squid-height
+    height squid-height
+
+  tr
+    background-color #ccc
+    border-top 1px solid #ccc
+  tr:nth-child(odd)
+    background-color #eee
+
+  td
+    padding 0
+    &:first-child
+      padding 0 4px
+
+    &:not(:first-child)
+      border-left 1px solid #888
+      padding 0 8px

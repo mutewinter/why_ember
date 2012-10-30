@@ -27,7 +27,7 @@ App.CodeView = Ember.View.extend
       onKeyEvent: (editor, rawEvent) =>
         # Keep this event from triggering a slide change.
         jQuery.Event(rawEvent).stopPropagation()
-      onChange: => @compileJavaScript() if @get('isCoffeeScript')
+      onChange: =>  @runCode() if @get('isCoffeeScript')
       onFocus: => @set('isFocused', true)
       onBlur: => @set('isFocused', false)
 
@@ -42,12 +42,14 @@ App.CodeView = Ember.View.extend
     else
       @fixEditorHeight()
 
+    @runCode()
+
   # ---------------
   # Code Conversion
   # ---------------
 
-  compileJavaScript: (code) ->
-    code = @code() unless code?
+  compileJavaScript: ->
+    code = @code()
     return @get('compiledJavaScript') if @get('coffeeScriptCode') == code
 
     # Save the CoffeeScript so we can swith back to it later.
@@ -87,7 +89,6 @@ App.CodeView = Ember.View.extend
 
     @set('lastError', message)
 
-
   # Public: Switch the language of the code shown in the editor.
   #
   # Returns nothing.
@@ -96,7 +97,7 @@ App.CodeView = Ember.View.extend
       @setCode(@get('coffeeScriptCode'))
       @set('language', 'coffeescript')
     else if @get('isCoffeeScript')
-      javaScriptCode = @compileJavaScript(@code())
+      javaScriptCode = @compileJavaScript()
       if javaScriptCode?
         @set('language', 'javascript')
         @setCode(javaScriptCode)
@@ -105,18 +106,21 @@ App.CodeView = Ember.View.extend
   # Code Evaluation
   # ---------------
 
-  runCode: -> @evalJavaScript(@get('editor').getValue())
+  runCode: (code) ->
+    return unless @get('isCoffeeScript')
+    @evalJavaScript(@compileJavaScript())
 
   # Eval the compiled js.
-  evalJavaScript: (javaScriptCode) ->
+  evalJavaScript: (code) ->
     try
-      fake = {}
-      fn = (new Function( "(this) { #{javaScriptCode} }"))
-      fn.call(fake)
-      console.log fake
+      context = {}
+      context.squidView = @get('squidView')
+      fn = (new Function("#{code}"))
+      fn.call(context)
     catch error
       # TODO Show the error on the page, rather than throwing it.
-      throw error
+      @clearError()
+      @displayError(error.message)
 
   observeLanguage: (->
     @changeEditorMode(@get('language'))
