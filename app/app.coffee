@@ -28,3 +28,7 @@ module.exports = Ember.Application.create
     return unless currentSlide
     slidePosition = @get('slides').indexOf(currentSlide) + 1
   ).property('currentSlide')
+
+  config: Ember.Object.create
+    # Public: Safe mode hides dangerous variables from the user in the code box.
+    safeMode: true

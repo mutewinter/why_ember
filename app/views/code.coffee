@@ -115,10 +115,12 @@ App.CodeView = Ember.View.extend
     try
       context = {}
       context.squidView = @get('squidView')
-      fn = (new Function("#{code}"))
+      if App.get('config.safeMode')
+        fn = (new Function('window', "#{code}"))
+      else
+        fn = (new Function("#{code}"))
       fn.call(context)
     catch error
-      # TODO Show the error on the page, rather than throwing it.
       @clearError()
       @displayError(error.message)
 
