@@ -14,7 +14,8 @@ Handlebars.registerHelper 'code', (options) ->
   # We pass the code view as a reference to the buttons view so it can directly
   # call actions on it.
   options.hash['codeView'] = codeView
-  Ember.Handlebars.helpers.view.call(this, 'App.ToolbarAndSquidView', options)
+  Ember.Handlebars.helpers.view.call(this, 'App.ToolbarAndSquidView',
+    options)
 
   # Note, without explicitly returning null we get errant <app.codebuttonsview>
   # tags.
