@@ -21,7 +21,7 @@ App.SquidView = Ember.View.extend
     @$().css(
       left: @get('x')
       top: @get('y')
-      'background-color': @getWithDefault('backgroundColor', )
+      'background-color': @get('backgroundColor')
     )
 
     @$('img').css(
