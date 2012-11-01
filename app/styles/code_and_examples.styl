@@ -12,6 +12,7 @@ subtle-text-color = #888
   Styles for the Code Mirror regions.
 */
 .CodeMirror
+  z-index 100
   width code-width
   background-color rgba(#fdfdfd, 0.5)
   border-radius 5px 5px 0 0
@@ -139,12 +140,12 @@ subtle-text-color = #888
 */
 
 .squid
-  squid-height = 100px
-
-  max-width 160px
   overflow hidden
   margin-top -144px
   display inline-block
+
+  max-width 200px
+  max-height 300px
 
   position relative
   float right
@@ -152,25 +153,27 @@ subtle-text-color = #888
 
   border 1px solid black
   font-size 0.8em
-  background-color #ddd
+
+  transition all 0.3s ease-in-out
 
   img
     margin auto
     display block
-    width squid-height
-    height squid-height
 
   tr
     background-color #ccc
     border-top 1px solid #ccc
   tr:nth-child(odd)
     background-color #eee
-
   td
     padding 0
+    overflow hidden
+    word-break break-all
     &:first-child
       padding 0 4px
-
     &:not(:first-child)
       border-left 1px solid #888
       padding 0 8px
+
+    &.label
+      min-width 35px

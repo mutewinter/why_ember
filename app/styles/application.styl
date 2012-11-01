@@ -1,6 +1,7 @@
 @import 'nib'
 
-link-color = #003dff
+link-color = #000
+link-hover-color = #BB3711
 orangina = #f24730
 app-footer-height = 20px
 
@@ -9,6 +10,7 @@ body
   background-image url('/img/crisp_paper_ruffles.png')
   font-family 'PT Sans' sans-serif
   margin-bottom app-footer-height
+  color #222
 
 h1
   color orangina
@@ -38,7 +40,6 @@ h2
     text-align center
 
 a, a:visited
-  hover-color = #1368e7
 
   color link-color
   text-decoration none
@@ -48,8 +49,8 @@ a, a:visited
   border-bottom 1px solid link-color
 
   &:hover
-    color hover-color
-    border-bottom 1px solid hover-color
+    color link-hover-color
+    border-bottom 1px solid link-hover-color
 
 /*
   Application
