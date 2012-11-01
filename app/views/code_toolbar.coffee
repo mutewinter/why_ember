@@ -3,11 +3,18 @@ App.CodeToolbarView = Ember.View.extend
   classNames: 'code-toolbar'
   classNameBindings: 'isFocused:focused language'.w()
 
+  # ------------
+  # User Actions
+  # ------------
+
   # Public: Switch the language of the cooresponding code view.
   #
   # Returns nothing.
   switchLanguage: ->
     @get('codeView').switchLanguage()
+
+  resetCode: ->
+    @get('codeView').resetCode()
 
   # -------------------
   # Computed Properties
@@ -17,18 +24,14 @@ App.CodeToolbarView = Ember.View.extend
   isCoffeeScriptBinding: 'codeView.isCoffeeScript'
   isJavaScriptBinding: 'codeView.isJavaScript'
   isFocusedBinding: 'codeView.isFocused'
+  isCodeModifiedBinding: 'codeView.isCodeModified'
+  hasErrorBinding: 'codeView.hasError'
 
   errorMessage: (->
     if @get('hasError')
       @get('codeView.lastError')
     else
       '&nbsp;'
-  ).property('codeView.lastError')
-
-  # Public: Bound to the code view's last error string. If it exists, it has an
-  # error.
-  hasError: (->
-    !!@get('codeView.lastError')
   ).property('codeView.lastError')
 
   switchText: (->
@@ -40,3 +43,7 @@ App.CodeToolbarView = Ember.View.extend
       'Edit CoffeeScript'
   ).property('codeView.language', 'hasError')
 
+  # Public: Can only reset code in coffeescript mode when the code is changed.
+  canResetCode: (->
+    @get('isCodeModified') and @get('isCoffeeScript')
+  ).property('isCodeModified', 'language')

@@ -2,10 +2,12 @@
 ERROR_REGEX = /.*?Parse error on line (\d+): (.+)/
 
 App.CodeView = Ember.View.extend
-  # Defaults
-  language: 'coffeescript'
   classNames: 'code-view'
   classNameBindings: 'noToolbar isFocused:focused language'.w()
+
+  # Defaults
+  language: 'coffeescript'
+  isCodeModified: false
 
   # ------------
   # Ember Events
@@ -19,6 +21,7 @@ App.CodeView = Ember.View.extend
     # Trim the trailing and leading whitespace from the code before we draw it.
     code = $.trim @$().text()
     @$().text('')
+    @set('starterCode', code)
 
     codeMirrorOptions =
       lineNumbers: true
@@ -27,7 +30,14 @@ App.CodeView = Ember.View.extend
       onKeyEvent: (editor, rawEvent) =>
         # Keep this event from triggering a slide change.
         jQuery.Event(rawEvent).stopPropagation()
-      onChange: =>  @runCode() if @get('isCoffeeScript')
+      onChange: =>
+        if @get('isCoffeeScript')
+          @runCode()
+
+          if @code() != @get('starterCode')
+            @set('isCodeModified', true)
+          else
+            @set('isCodeModified', false)
       onFocus: => @set('isFocused', true)
       onBlur: => @set('isFocused', false)
 
@@ -98,9 +108,14 @@ App.CodeView = Ember.View.extend
       @set('language', 'coffeescript')
     else if @get('isCoffeeScript')
       javaScriptCode = @compileJavaScript()
-      if javaScriptCode?
+      if javaScriptCode? and !@get('hasError')
         @set('language', 'javascript')
         @setCode(javaScriptCode)
+
+  # Public: Resets the code example back to what it was when the slide first
+  # loaded.
+  resetCode: ->
+    @setCode(@get('starterCode'))
 
   # ---------------
   # Code Evaluation
@@ -171,3 +186,8 @@ App.CodeView = Ember.View.extend
   isCoffeeScript: (->
     @get('language') == 'coffeescript'
   ).property('language')
+
+  # Public: We are in the error state if we haven't cleared the last error.
+  hasError: (->
+    !!@get('lastError')
+  ).property('lastError')
