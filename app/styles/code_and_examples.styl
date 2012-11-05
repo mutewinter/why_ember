@@ -3,10 +3,62 @@
 
 // Variables
 code-width = 550px
+code-background-color = rgba(#fdfdfd, 0.5)
 border-color = #ccc
 focused-border-color = black
 subtle-text-color = #888
 code-z-index = 100
+
+/*
+  Code Editor and Example View
+*/
+.code-and-example
+  clearfix()
+
+/*
+  Code and Status Bar
+  Contains the code view and its status bar.
+
+  .focused - When the view becomes focused, we hide some elements.
+*/
+.code-and-status-bar
+  // Just in case a code example ends up on top of the code view.
+  z-index code-z-index
+  // Account for padding
+  width code-width + 10px
+  position relative
+  float left
+
+  &.javascript
+    .code-view:after
+      content 'JavaScript'
+
+  &.coffeescript
+    .code-view:after
+      content 'CoffeeScript'
+
+.code-and-status-bar.focused
+  .CodeMirror
+    border-color focused-border-color
+
+  &.coffeescript
+    .code-view:after
+        display none
+
+  // Don't highlight the border or show the cursor so the user doesn't think
+  // they can edit.
+  &.javascript
+    .CodeMirror
+      border-color border-color
+
+    .CodeMirror-cursor
+      display none
+
+  .code-toolbar
+    &.focused:not(.javascript)
+      border-color focused-border-color
+      border-top: 1px solid border-color
+
 
 /*
   Code Mirror
@@ -14,7 +66,7 @@ code-z-index = 100
 */
 .CodeMirror
   width code-width
-  background-color rgba(#fdfdfd, 0.5)
+  background-color code-background-color
   border-radius 5px 5px 0 0
   padding 2px 4px
 
@@ -38,19 +90,13 @@ code-z-index = 100
 
 /*
   Code View
-  The view that wraps the Code Mirror and Code Toolbar views.
+  The view that wraps the Code Mirror view.
 
   .focused    - Highlight the border of the view when its focused.
   .javascript - Hide the cursor when in JavaScript mode since they can't edit.
 */
 
 .code-view
-  // Just in case a code sample ends up on top of the code view.
-  z-index code-z-index
-  // Account for padding
-  width code-width + 10px
-  position relative
-
   &:after
     font-size 0.8em
     position absolute
@@ -63,30 +109,6 @@ code-z-index = 100
 
     color subtle-text-color
 
-  &.javascript
-    &:after
-      content 'JavaScript'
-
-  &.coffeescript
-    &:after
-      content 'CoffeeScript'
-
-.code-view.focused
-  .CodeMirror
-    border-color focused-border-color
-
-  &.coffeescript:after
-    display none
-
-  // Don't highlight the border or show the cursor so the user doesn't think
-  // they can edit.
-  &.javascript
-    .CodeMirror
-      border-color border-color
-
-    .CodeMirror-cursor
-      display none
-
 /*
   Code Toolbar
   The toolbar below a Code Mirror view. Contains buttons and output relevant to
@@ -96,10 +118,6 @@ code-z-index = 100
 */
 .code-toolbar
   buttons-width = 120px
-  // Extra width is due to CodeMirror adjusting width.
-  width code-width + 8px
-  z-index code-z-index
-  position relative
   overflow hidden
 
   font-size 0.8em
@@ -107,14 +125,11 @@ code-z-index = 100
   border 1px solid border-color
   border-radius 0 0 5px 5px
 
-  clearfix()
-
   .messages
     max-width code-width - 105
     padding-left 5px
     color subtle-text-color
     float left
-    height 100%
     word-break break-all
 
     &.error
@@ -136,10 +151,21 @@ code-z-index = 100
       &:hover
         text-decoration underline
 
-  &.focused:not(.javascript)
-    border-color focused-border-color
-    border-top: 1px solid border-color
+/*
+  Fake Code
+  The fake code view that is shown instead of the code view.
+*/
+.fake-code
+  fake-code-height = 150px
+  height fake-code-height
 
+  background-color rgba(code-background-color, 0.5)
+  border-radius 5px
+
+  color #ccc
+  font-size 3em
+  text-align center
+  line-height fake-code-height
 
 /*
   Squid
@@ -149,7 +175,6 @@ code-z-index = 100
 
 .squid
   overflow hidden
-  margin-top -144px
   display inline-block
 
   max-width 200px

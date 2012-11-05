@@ -3,3 +3,4 @@ App.SlideContentView = Ember.View.extend
   tagName: 'section'
   classNames: 'slide-content'
   templateNameBinding: 'content.templatePath'
+  previewBinding: 'parentView.preview'

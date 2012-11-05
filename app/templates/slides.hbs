@@ -9,7 +9,7 @@
   {{#with view.content as content}}
     <div {{action goToSlide content}}
       {{bindAttr class=":slide-container :preview content.isLastShownSlide:flash"}}>
-      {{view App.SlideView contentBinding="content"}}
+      {{view App.SlideView contentBinding="content" preview=true}}
     </div>
   {{/with}}
 {{/collection}}

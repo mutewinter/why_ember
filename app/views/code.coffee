@@ -3,7 +3,6 @@ ERROR_REGEX = /.*?Parse error on line (\d+): (.+)/
 
 App.CodeView = Ember.View.extend
   classNames: 'code-view'
-  classNameBindings: 'noToolbar isFocused:focused language'.w()
 
   # Defaults
   language: 'coffeescript'
