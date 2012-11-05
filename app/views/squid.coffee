@@ -28,14 +28,16 @@ App.SquidView = App.ExampleView.extend
   # Internal: Observes all of the properties that affect the css of this view.
   # When the properties change, we simply update the
   cssPropertiesChanged: (->
+    # Note: We restrict values to < 1000 due to performance issues lager values
+    # cause.
     @$().css(
-      left: @get('x')
-      top: @get('y')
+      left: if @get('x') < 1000 then @get('x') else 1000
+      top: if @get('y') < 1000 then @get('y') else 1000
       'background-color': @get('backgroundColor')
     )
 
     @$('img').css(
-      width: @get('imageWidth')
-      height: @get('imageHeight')
+      width: if @get('imageWidth') < 1000 then @get('imageWidth') else 1000
+      height: if @get('imageHeight') < 1000 then @get('imageHeight') else 1000
     )
   ).observes('x', 'y', 'imageWidth', 'imageHeight', 'backgroundColor')
