@@ -1,4 +1,4 @@
-require 'views/example'
+require 'views/examples/example'
 
 # Public: A view that holds the example squid to be modified by the CodeView.
 App.SquidView = App.ExampleView.extend

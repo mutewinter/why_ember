@@ -1,7 +1,7 @@
 # Public: The squid view, with some computed properties
 
 # Since we extend SquidView, we must require it
-require('views/squid')
+require('views/examples/squid')
 App.ComputedSquidView = App.SquidView.extend
 
   # Public: Computed property for getting the width and height of the image.
