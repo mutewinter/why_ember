@@ -26,6 +26,14 @@ App.CodeToolbarView = Ember.View.extend
   isFocusedBinding: 'codeView.isFocused'
   isCodeModifiedBinding: 'codeView.isCodeModified'
   hasErrorBinding: 'codeView.hasError'
+  exportedVariablesBinding: 'codeView.exportedVariables'
+
+  message: (->
+    if @get('exportedVariables')? and @get('exportedVariables.length')
+      "Local Variables: #{@get('exportedVariables').join(',')}"
+    else
+      ''
+  ).property('exportedVariables')
 
   errorMessage: (->
     if @get('hasError')

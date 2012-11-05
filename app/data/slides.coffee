@@ -5,11 +5,11 @@ App.Slide.reopenClass
     { templateName: 'what_is_ember', title: 'What is Ember?' }
     { templateName: 'why_ember', title: 'Why Ember?' }
     { templateName: 'code_samples', title: 'Code Samples' }
+    { templateName: 'built_in_goodies', title: 'Built in Goodies' }
     { templateName: 'data_binding', title: 'Data Binding' }
     { templateName: 'class_bindings', title: 'Class Bindings' }
     { templateName: 'computed_properties', title: 'Computed Properties' }
     { templateName: 'all_togther_now', title: 'All Together Now' }
-    { templateName: 'eliminates_dependancies', title: 'Eliminates Dependancies' }
     { templateName: 'sane_class_syntax', title: 'Sane Class Syntax' }
     { templateName: 'super', title: 'Super' }
     { templateName: 'attribute_bindings', title: 'Attribute Bindings' }

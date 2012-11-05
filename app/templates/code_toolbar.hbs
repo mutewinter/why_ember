@@ -1,5 +1,9 @@
 <div {{bindAttr class=":messages view.hasError:error"}}>
-  {{view.errorMessage}}
+  {{#if view.hasError}}
+    {{view.errorMessage}}
+  {{else}}
+    {{view.message}}
+  {{/if}}
 </div>
 <div class="buttons">
   {{#if view.canResetCode}}

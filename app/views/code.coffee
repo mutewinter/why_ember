@@ -127,16 +127,33 @@ App.CodeView = Ember.View.extend
   # Eval the compiled js.
   evalJavaScript: (code) ->
     try
-      context = {}
-      context.exampleView = @get('exampleView')
-      if App.get('config.safeMode')
-        fn = (new Function('window', "#{code}"))
+
+      if @get('exampleView')?
+        exportedVariables = @get('exampleView.exportedVariables')
       else
-        fn = (new Function("#{code}"))
-      fn.call(context)
+        exportedVariables = []
+
+      # Make an array of the values of the exported variables to later pass
+      # as arguments to the anonymous function.
+      variableValues = exportedVariables.map (variable) =>
+        @get("exampleView.#{variable}")
+
+      @get('exampleView')?.willRunCode()
+
+      if App.get('config.safeMode')
+        fn = (new Function(exportedVariables...,'window', "#{code}"))
+      else
+        fn = (new Function(exportedVariables...,"#{code}"))
+
+      # We setup the arguments to the function above, now we pass the values
+      # for those arguments in as arguments to make them live within the
+      # anonymous function.
+      fn(variableValues...)
     catch error
       @clearError()
       @displayError(error.message)
+    finally
+      @get('exampleView')?.didRunCode()
 
   observeLanguage: (->
     @changeEditorMode(@get('language'))
@@ -177,6 +194,8 @@ App.CodeView = Ember.View.extend
   # -------------------
   # Computed Properties
   # -------------------
+
+  exportedVariablesBinding: 'exampleView.exportedVariables'
 
   isJavaScript: (->
     @get('language') == 'javascript'

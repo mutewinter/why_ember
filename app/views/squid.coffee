@@ -1,7 +1,13 @@
+require 'views/example'
+
 # Public: A view that holds the example squid to be modified by the CodeView.
-App.SquidView = Ember.View.extend
+App.SquidView = App.ExampleView.extend
   templateName: 'templates/squid'
   classNames: 'squid'
+
+  # Public: Variables exported for the Code Editor to play with.
+  exportedVariables: 'squidView'.w()
+  squidView: (-> this).property()
 
   # --------------
   # Default Values
