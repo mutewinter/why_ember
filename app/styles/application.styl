@@ -4,6 +4,8 @@ link-color = #000
 link-hover-color = #BB3711
 orangina = #f24730
 app-footer-height = 20px
+subtle-border-color = #ccc
+subtle-text-color = #888
 
 body
   height 100%
@@ -59,8 +61,34 @@ a, a:visited
 */
 .notes
   display none
+
+  background rgba(white, 0.6)
+  padding 10px 5px
+  border-radius 5px
+  position relative
+  border 1px solid subtle-border-color
+  color #666
+  width 70%
+  margin auto
+
+  &:before
+    content 'Slide Notes'
+
+    position absolute
+    top 0
+    right 0
+    padding 0 5px
+
+    color subtle-text-color
+    font-size 0.8em
+
+    border-radius 0 5px 0 5px
+    border-left 1px solid subtle-border-color
+    border-bottom 1px solid subtle-border-color
+
   &.shown
     display block
+
 
 /*
   Application
