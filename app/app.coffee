@@ -29,6 +29,11 @@ module.exports = Ember.Application.create
     slidePosition = @get('slides').indexOf(currentSlide) + 1
   ).property('currentSlide')
 
+  # Public: We keep our application configuration in a neat little config
+  # object.
   config: Ember.Object.create
-    # Public: Safe mode hides dangerous variables from the user in the code box.
+    # Public: Safe mode hides dangerous variables from the user in the code
+    # box.
     safeMode: true
+    # Public: Hide slide notes by default.
+    showNotes: true

@@ -3,11 +3,10 @@
   <footer class="app-footer">
     <ul>
       <li>
-        {{#if App.currentSlide}}
-        <a {{action goToSlide App.firstSlide href=true}}>Back to the Start</a>
-        {{else}}
-          &nbsp;
-        {{/if}}
+        <label>
+          {{view Ember.Checkbox checkedBinding="App.config.showNotes"}}
+          Show Notes
+        </label>
       </li>
       <li>
         Created by <a href="http://twitter.com/mutewinter">Jeremy Mack</a>
