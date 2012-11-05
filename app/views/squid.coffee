@@ -31,9 +31,9 @@ App.SquidView = Ember.View.extend
     @$('img').css(@get('imageSize'))
   ).observes('x', 'y', 'imageSize', 'backgroundColor')
 
-  # ------------------
+  # -------------------
   # Computed Properties
-  # ------------------
+  # -------------------
 
   # Public: Computed property for getting the width and height of the image.
   # Also a setter for the height and width at the same time.
