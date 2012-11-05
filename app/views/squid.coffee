@@ -13,8 +13,8 @@ App.SquidView = App.ExampleView.extend
   # Default Values
   # --------------
 
-  name: 'Default Squid'
-  phylum: 'Boringpants'
+  name: 'Derpy Squid'
+  phylum: 'Crustaderp'
   x: 0
   y: 0
   imageWidth: 100
