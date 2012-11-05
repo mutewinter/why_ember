@@ -14,7 +14,7 @@ App.SquidView = App.ExampleView.extend
   # --------------
 
   name: 'Derpy Squid'
-  phylum: 'Crustaderp'
+  phylum: 'Cephaderp'
   x: 0
   y: 0
   imageWidth: 100
