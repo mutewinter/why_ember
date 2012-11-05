@@ -1,13 +1,15 @@
-App.ToolbarAndSquidView = Ember.ContainerView.extend
+App.ToolbarAndExampleView = Ember.ContainerView.extend
   init: ->
     @_super()
 
     @addAndSaveView(App.CodeToolbarView.create(
       codeView: @get('codeView')), 'toolbarView')
 
-    @addAndSaveView(App.SquidView.create(), 'squidView')
+    return unless @get('exampleViewClassName')
 
-    @get('codeView').set('squidView', @get('squidView'))
+    exampleViewClass = Ember.get(@get('exampleViewClassName'))
+    @addAndSaveView(exampleViewClass.create(), 'exampleView')
+    @get('codeView').set('exampleView', @get('exampleView'))
 
   # Internal: Push the view on the childViews stack and save it locally with
   # the given name.

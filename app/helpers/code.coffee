@@ -6,6 +6,8 @@ Handlebars.registerHelper 'code', (options) ->
   # Don't draw the buttons view if the user doesn't want it.
   return if options.hash?.noToolbar
 
+  exampleViewClassName = options.hash?.exampleViewClassName
+
   # The last item in the child views array for the parent will now be the
   # App.CodeView created on the line above.
   codeView = options.hash._parentView.get('childViews.lastObject')
@@ -14,7 +16,8 @@ Handlebars.registerHelper 'code', (options) ->
   # We pass the code view as a reference to the buttons view so it can directly
   # call actions on it.
   options.hash['codeView'] = codeView
-  Ember.Handlebars.helpers.view.call(this, 'App.ToolbarAndSquidView',
+  options.hash['exampleViewClassName'] = exampleViewClassName
+  Ember.Handlebars.helpers.view.call(this, 'App.ToolbarAndExampleView',
     options)
 
   # Note, without explicitly returning null we get errant <app.codebuttonsview>

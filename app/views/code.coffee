@@ -129,7 +129,7 @@ App.CodeView = Ember.View.extend
   evalJavaScript: (code) ->
     try
       context = {}
-      context.squidView = @get('squidView')
+      context.exampleView = @get('exampleView')
       if App.get('config.safeMode')
         fn = (new Function('window', "#{code}"))
       else

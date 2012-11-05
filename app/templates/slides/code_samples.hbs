@@ -2,14 +2,17 @@
   <li>The code samples in this presentation are interactive</li>
   <li>The code is written in <a href="http://coffeescript.org/">CoffeeScript</a></li>
   <li>And can be viewed in JavaScript</li>
-  <li>Mess with the code below to change the Squid</li>
+  <li>Try editing the code below and see how it affects the page.</li>
 </ul>
 
-{{#code height=150}}
-@squidView.set('name', 'Dynamic Squid')
-@squidView.set('phylum', 'Magicalitus')
-@squidView.set('x', 10)
-@squidView.set('imageWidth', 80)
-@squidView.set('imageHeight', 80)
-@squidView.set('backgroundColor', 'salmon')
+{{#code hasExampleView=false}}
+# Change Slide Background to Blue
+$('.slide-container').css('background-color': 'rgba(0,50,100,0.25)')
+# Change Heading Color to Dark Blue
+$('.slide h1').css(color: 'darkBlue')
+# Change Link Style
+$('.slide li a').css
+    'border-bottom-style': 'double'
+    'border-bottom-width': '4px'
+    'border-bottom-color': '#1975E9'
 {{/code}}
