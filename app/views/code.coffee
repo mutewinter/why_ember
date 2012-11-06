@@ -148,8 +148,6 @@ App.CodeView = Ember.View.extend
       argumentNames = exportedVariables.concat(exportedFunctions)
       valuesAndFunctions = variableValues.concat(boundFunctions)
 
-      console.log 'created variable values', variableValues
-
       exampleView?.willRunCode()
 
       if App.get('config.safeMode')
