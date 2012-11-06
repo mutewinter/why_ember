@@ -11,23 +11,6 @@
     API Documentation </a> for more</li>
 </ul>
 
-{{#code noToolbar=true language="css"}}
-.example-child-view.color-red {
-  color: red;
-}
-.example-child-view.color-green {
-  color: green;
-}
-.example-child-view.color-blue {
-  color: blue;
-}
-.example-child-view.hidden {
-  display: none;
-}
-{{/code}}
-
-<hr/>
-
 {{#code exampleViewClassName="App.ExampleContainerView"}}
 ChildView = Ember.View.extend(
   classNames: 'example-child-view'
@@ -52,6 +35,24 @@ containerView.get('childViews').pushObject secondChildView
 # Uncomment the lines below to see the changes to the view
 # firstChildView.set('isHidden', true)
 # secondChildView.set('color', 'green')
+{{/code}}
+
+<p>
+  Here's the CSS that governs the example above.
+</p>
+{{#code noToolbar=true language="css"}}
+.example-child-view.color-red {
+  color: red;
+}
+.example-child-view.color-green {
+  color: green;
+}
+.example-child-view.color-blue {
+  color: blue;
+}
+.example-child-view.hidden {
+  display: none;
+}
 {{/code}}
 
 {{#view App.NotesView}}
