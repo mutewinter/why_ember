@@ -1,8 +1,12 @@
-<span>
+<ul>
+  <li>Automatically polyfilled to older browsers</li>
+  <li>Available on the Native Array Object</li>
+  <li>
   map {{documentation "Ember.NativeArray.html#method_map"}}
   reduce {{documentation "Ember.NativeArray.html#method_reduce"}}
   filter {{documentation "Ember.NativeArray.html#method_filter"}}
-</span>
+  </li>
+</ul>
 {{#code exampleViewClassName="App.LogView" isExpanded=true}}
 data = [0..10]
 
@@ -13,8 +17,3 @@ log data.reduce(
 , 0)
 log 'Even Values', data.filter((i) -> i % 2 == 0)
 {{/code}}
-
-<div class="note">
-Note: These array methods are polyfilled to the native browser methods when
-they are available.
-</div>
