@@ -10,7 +10,7 @@
 </div>
 {{#collection class="slide-list" contentBinding="content" tagName="ul" itemTagName="li"}}
   {{#with view.content as content}}
-    <div {{action goToSlide content on="touchClick"}}
+    <div {{action goToSlide content}}
       {{bindAttr class=":slide-container :preview content.isLastShownSlide:flash"}}>
       {{view App.SlideView contentBinding="content" preview=true}}
     </div>

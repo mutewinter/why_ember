@@ -30,8 +30,7 @@ module.exports = Ember.Application.create
   ).property('currentSlide')
 
   customEvents:
-    'click': 'touchClick'
-    'touchend': 'touchClick'
+    'touchend': 'click'
 
   init: ->
     @_super()
