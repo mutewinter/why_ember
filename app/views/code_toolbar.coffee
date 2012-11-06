@@ -30,7 +30,7 @@ App.CodeToolbarView = Ember.View.extend
 
   message: (->
     if @get('exportedVariables')? and @get('exportedVariables.length')
-      "Local Variables: #{@get('exportedVariables').join(',')}"
+      "Variables: #{@get('exportedVariables').join(',')}"
     else
       ''
   ).property('exportedVariables')
