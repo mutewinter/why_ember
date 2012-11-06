@@ -15,5 +15,6 @@ App.Slide.reopenClass
     { templateName: 'array_comprehensions', title: 'Array Comprehensions' }
     { templateName: 'array_of_objects_methods', title: 'Array of Objects Methods' }
     { templateName: 'third_party_javascript', title: 'Third Party JavaScript' }
+    { templateName: 'and_finally', title: 'And Finally' }
     { templateName: 'acknowledgements', title: 'Acknowledgements' }
   ]
