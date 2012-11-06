@@ -12,6 +12,7 @@ App.Slide.reopenClass
     { templateName: 'all_togther_now', title: 'All Together Now' }
     { templateName: 'sane_class_syntax', title: 'Sane Class Syntax' }
     { templateName: 'super', title: 'Super' }
+    { templateName: 'array_comprehensions', title: 'Array Comprehensions' }
     { templateName: 'attribute_bindings', title: 'Attribute Bindings' }
     { templateName: 'third_party_javascript', title: 'Third Party JavaScript' }
     { templateName: 'acknowledgements', title: 'Acknowledgements' }

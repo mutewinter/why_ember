@@ -1,0 +1,20 @@
+<span>
+  map {{documentation "Ember.NativeArray.html#method_map"}}
+  reduce {{documentation "Ember.NativeArray.html#method_reduce"}}
+  filter {{documentation "Ember.NativeArray.html#method_filter"}}
+</span>
+{{#code exampleViewClassName="App.LogView" isExpanded=true}}
+data = [0..10]
+
+log 'Starting Data', data
+log 'Multiplied by two', data.map((i) -> i * 2)
+log data.reduce(
+  (sum, i) -> sum += i
+, 0)
+log 'Even Values', data.filter((i) -> i % 2 == 0)
+{{/code}}
+
+<div class="note">
+Note: These array methods are polyfilled to the native browser methods when
+they are available.
+</div>
