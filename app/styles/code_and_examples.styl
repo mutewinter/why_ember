@@ -33,6 +33,10 @@ code-z-index = 100
     .code-view:after
       content 'JavaScript'
 
+  &.css
+    .code-view:after
+      content 'CSS'
+
   &.coffeescript
     .code-view:after
       content 'CoffeeScript'
@@ -47,7 +51,7 @@ code-z-index = 100
 
   // Don't highlight the border or show the cursor so the user doesn't think
   // they can edit.
-  &.javascript
+  &:not(.coffeescript)
     .CodeMirror
       border-color border-color
 
@@ -55,7 +59,7 @@ code-z-index = 100
       display none
 
   .code-toolbar
-    &.focused:not(.javascript)
+    &.focused.coffeescript
       border-color focused-border-color
       border-top: 1px solid border-color
 
@@ -254,3 +258,25 @@ code-z-index = 100
   border-radius 5px
 
   font-size 0.8em
+
+/*
+  Example Container View
+  A container that can hold many example views.
+*/
+.example-container-view
+  float right
+  width 150px
+  height 100px
+  background-color white
+  border 1px solid border-color
+
+.example-child-view
+  &.color-red
+    color red
+  &.color-green
+    color green
+  &.color-blue
+    color blue
+
+  &.hidden
+    display none

@@ -174,10 +174,10 @@ App.CodeView = Ember.View.extend
     editor = @get('editor')
     editor.setOption('mode', language)
 
-    if language is 'javascript'
-      editor.setOption('readOnly', true)
-    else
+    if language is 'coffeescript'
       editor.setOption('readOnly', false)
+    else
+      editor.setOption('readOnly', true)
 
   # -------
   # Helpers

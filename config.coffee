@@ -22,6 +22,7 @@ exports.config =
           'vendor/scripts/codemirror.js'
           'vendor/scripts/codemirror-coffeescript.js'
           'vendor/scripts/codemirror-javascript.js'
+          'vendor/scripts/codemirror-css.js'
         ]
 
     stylesheets:

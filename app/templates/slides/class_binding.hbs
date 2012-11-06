@@ -1,1 +1,46 @@
-Empty
+<ul>
+  <li>Almost No Code</li>
+  <li>Works Great with Computed Properties</li>
+</ul>
+
+{{#code noToolbar=true language="css"}}
+.example-child-view.color-red {
+  color: red;
+}
+.example-child-view.color-green {
+  color: green;
+}
+.example-child-view.color-blue {
+  color: blue;
+}
+.example-child-view.hidden {
+  display: none;
+}
+{{/code}}
+
+<hr/>
+
+{{#code exampleViewClassName="App.ExampleContainerView"}}
+ChildView = Ember.View.extend(
+  classNames: 'example-child-view'
+  classNameBindings: 'isHidden:hidden colorClass'.w()
+  template: Handlebars.compile('Child View')
+
+  # Defaults
+  isHidden: false
+  color: 'red'
+
+  colorClass: (->
+    "color-#{@get('color')}"
+  ).property('color')
+)
+
+firstChildView = ChildView.create()
+secondChildView = ChildView.create()
+
+containerView.get('childViews').pushObject firstChildView
+containerView.get('childViews').pushObject secondChildView
+
+firstChildView.set('isHidden', true)
+secondChildView.set('color', 'green')
+{{/code}}
