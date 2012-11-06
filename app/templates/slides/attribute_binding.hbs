@@ -7,13 +7,13 @@
 childView = Ember.View.create(
   template: Ember.Handlebars.compile(
     '&lt;img &#123;{bindAttr src="view.src"}}/>')
-  src: '/img/squid.svg'
+  src: 'img/squid.svg'
 )
 
 containerView.get('childViews').pushObject childView
 
 # Uncomment the line below to see the Squid change.
-# childView.set('src', '/img/less_derpy_squid.svg')
+# childView.set('src', 'img/less_derpy_squid.svg')
 {{/code}}
 
 {{#view App.NotesView}}
