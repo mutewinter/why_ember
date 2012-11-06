@@ -128,32 +128,44 @@ App.CodeView = Ember.View.extend
   evalJavaScript: (code) ->
     try
 
-      if @get('exampleView')?
-        exportedVariables = @get('exampleView.exportedVariables')
+      exampleView = @get('exampleView')
+
+      if exampleView?
+        exportedVariables = exampleView.get('exportedVariables')
+        exportedFunctions = exampleView.get('exportedFunctions')
       else
         exportedVariables = []
 
-      # Make an array of the values of the exported variables to later pass
-      # as arguments to the anonymous function.
-      variableValues = exportedVariables.map (variable) =>
-        @get("exampleView.#{variable}")
+      # Make arrays of the variable values and functions so we can pass them
+      # as arguments later.
 
-      @get('exampleView')?.willRunCode()
+      variableValues = exportedVariables.map (variable) =>
+        exampleView.get(variable)
+      boundFunctions = exportedFunctions.map (functionName) ->
+        unboundFunction = exampleView.get(functionName)
+        unboundFunction.bind(exampleView)
+
+      argumentNames = exportedVariables.concat(exportedFunctions)
+      valuesAndFunctions = variableValues.concat(boundFunctions)
+
+      console.log 'created variable values', variableValues
+
+      exampleView?.willRunCode()
 
       if App.get('config.safeMode')
-        fn = (new Function(exportedVariables...,'window', "#{code}"))
+        fn = (new Function(argumentNames...,'window', "#{code}"))
       else
-        fn = (new Function(exportedVariables...,"#{code}"))
+        fn = (new Function(argumentNames...,"#{code}"))
 
       # We setup the arguments to the function above, now we pass the values
       # for those arguments in as arguments to make them live within the
       # anonymous function.
-      fn(variableValues...)
+      fn(valuesAndFunctions...)
     catch error
       @clearError()
       @displayError(error.message)
     finally
-      @get('exampleView')?.didRunCode()
+      exampleView?.didRunCode()
 
   observeLanguage: (->
     @changeEditorMode(@get('language'))

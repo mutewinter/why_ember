@@ -1,9 +1,25 @@
 <ul>
-  <li>Always up to date</li>
-  <li>Cached Intelligently</li>
+  <li>Transform One Variable to Another</li>
+  <li>Cached Automatically</li>
   <li>Chainable</li>
 </ul>
 
-{{#code exampleViewClassName="App.ComputedSquidView" height=150}}
-squidView.set('imageSize', 50)
+{{#code exampleViewClassName="App.LogView"}}
+computedSquid = Ember.Object.create
+  name: 'Derpy Squid'
+  tentacleCount: 1
+
+  tentacleText: (->
+    if @get('tentacleCount') == 1 then 'tentacle' else 'tentacles'
+  ).property('tentacleCount')
+
+  description: (->
+    name = @get('name')
+    tentacleCount = @get('tentacleCount')
+    "#{name} with #{tentacleCount} #{@get('tentacleText')}"
+  ).property('name', 'tentacleCount')
+
+log computedSquid.get('description')
+computedSquid.set('tentacleCount', 8)
+log computedSquid.get('description')
 {{/code}}

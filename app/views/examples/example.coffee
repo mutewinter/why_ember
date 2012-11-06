@@ -4,6 +4,7 @@ App.ExampleView = Ember.View.extend
   # Public: Array of String variable names to export for the Code Editor to
   # play with.
   exportedVariables: []
+  exportedFunctions: []
 
   # Internal: Callback when the code is about to be run.
   willRunCode: Ember.K
