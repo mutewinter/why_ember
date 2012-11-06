@@ -135,6 +135,7 @@ App.CodeView = Ember.View.extend
         exportedFunctions = exampleView.get('exportedFunctions')
       else
         exportedVariables = []
+        exportedFunctions = []
 
       # Make arrays of the variable values and functions so we can pass them
       # as arguments later.
