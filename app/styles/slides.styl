@@ -1,5 +1,6 @@
 @import 'nib'
 
+orangina = #f24730
 slide-background-color = rgb(250,206,162)
 slide-width = 768px
 slide-margin = 4px
@@ -58,7 +59,7 @@ ul.slide-list
       font-size 1.8em
       margin 18px 0
       &.small
-        font-size 1.0em
+        font-size 1.5em
 
   .subtle
     font-size 0.8em
@@ -71,6 +72,25 @@ ul.slide-list
 
 .slide-content
   margin 10px 20px
+
+/*
+  Doc Link
+  A small link to documentation
+*/
+a.doc-link
+  position relative
+  bottom 4px
+
+  font-size 0.3em
+  padding 1px 2px 0 2px
+  background-color lighten(orangina, 30%)
+  border 1px solid orangina
+  border-radius 3px
+  opacity 0.3
+
+  &:hover
+    border 1px solid orangina
+    opacity 1
 
 /*
   Slide-Specific Styles

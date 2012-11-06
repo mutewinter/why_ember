@@ -14,12 +14,15 @@ App.LogView = App.ExampleView.extend
 
   # Public: Log a message into the logger area.
   #
-  # object - Any object or primitive type.
+  # objects - As many objects as you'd like.
   #
-  # Returns the object.
-  log: (object) ->
-    @get('logMessages').pushObject(@variableToString(object))
-    object
+  # Returns the null.
+  log: (objects...) ->
+    objectsString = objects.map((object) =>
+      @variableToString object
+    ).join(', ')
+    @get('logMessages').pushObject(objectsString)
+    null
 
   # Internal: Convert any type of variable to a string.
   #
@@ -44,7 +47,8 @@ App.LogView = App.ExampleView.extend
       string += '...' if count > maxPairs
       string = "{#{string}}"
     else if emberType is 'array'
-      string = "[#{variable}]"
+      string = variable.map(@variableToString).join(', ')
+      string = "[#{string}]"
     else if emberType is 'string'
       string = "\"#{variable}\""
     else if variable?

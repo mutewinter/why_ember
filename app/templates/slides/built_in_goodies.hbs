@@ -1,9 +1,25 @@
 <ul>
-  <li>String Manipulation</li>
-  <li>Array Comprehensions (doc link here)</li>
-  <li>Run Loop <a class="docs" href="http://emberjs.com/omgbbq">Docs</a></li>
-  <li>w Function</li>
-  <li>Ember.typeOf</li>
-  <li>Ember.K</li>
-  <li>String.fmt</li>
+  <li>String Manipulation {{documentation "Ember.String.html"}}</li>
 </ul>
+<span>
+String.w {{documentation "Ember.String.html#method_w"}}
+String.fmt {{documentation "Ember.String.html#method_fmt"}}
+</span>
+{{#code exampleViewClassName="App.LogView" noToolbar=true isExpanded=true}}
+log 'item_one item2 third_item'.w()
+log 'Hello Mr. %@ the %@'.fmt('Derpy', 'Squid')
+{{/code}}
+
+<ul>
+  <li>Utility Functions</li>
+</ul>
+<span>
+  Ember.typeOf {{documentation "Ember.html#method_typeOf"}}
+  Ember.makeArray {{documentation "Ember.html#method_makeArray"}}
+  Ember.keys {{documentation "Ember.html#method_keys"}}
+</span>
+{{#code exampleViewClassName="App.LogView" noToolbar=true isExpanded=true}}
+log Ember.typeOf('s'), Ember.typeOf([1,2]), Ember.typeOf(x: 1)
+log Ember.makeArray(1), Ember.makeArray([1,2])
+log Ember.keys(x: 1, y: 2)
+{{/code}}

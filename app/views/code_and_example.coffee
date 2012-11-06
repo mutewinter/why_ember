@@ -27,7 +27,9 @@ App.CodeAndExampleView = Ember.ContainerView.extend
       return unless @get('exampleViewClassName')
 
       exampleViewClass = Ember.get(@get('exampleViewClassName'))
-      @addAndSaveView(exampleViewClass.create(), 'exampleView')
+      @addAndSaveView(exampleViewClass.create(
+        isExpanded: @get('isExpanded')
+      ), 'exampleView')
 
       # Set the example view in the code
       @set('codeEditorView.codeView.exampleView', @get('exampleView'))
