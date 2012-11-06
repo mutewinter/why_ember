@@ -27,12 +27,16 @@ App.CodeToolbarView = Ember.View.extend
   isCodeModifiedBinding: 'codeView.isCodeModified'
   hasErrorBinding: 'codeView.hasError'
   exportedVariablesBinding: 'codeView.exportedVariables'
+  exportedFunctionsBinding: 'codeView.exportedFunctions'
 
   message: (->
+    string = ''
     if @get('exportedVariables')? and @get('exportedVariables.length')
-      "Variables: #{@get('exportedVariables').join(',')}"
-    else
-      ''
+      string += "Variables: #{@get('exportedVariables').join(',')}"
+    if @get('exportedFunctions')? and @get('exportedFunctions.length')
+      string += "Functions: #{@get('exportedFunctions').join(',')}"
+
+    string
   ).property('exportedVariables')
 
   errorMessage: (->

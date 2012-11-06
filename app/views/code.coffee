@@ -207,6 +207,7 @@ App.CodeView = Ember.View.extend
   # -------------------
 
   exportedVariablesBinding: 'exampleView.exportedVariables'
+  exportedFunctionsBinding: 'exampleView.exportedFunctions'
 
   isJavaScript: (->
     @get('language') == 'javascript'
