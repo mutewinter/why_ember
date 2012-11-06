@@ -1,0 +1,1478 @@
+/*! normalize.css v2.0.1 | MIT License | git.io/normalize */
+
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+/*
+ * Corrects `block` display not defined in IE 8/9.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+    display: block;
+}
+
+/*
+ * Corrects `inline-block` display not defined in IE 8/9.
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+/*
+ * Prevents modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/*
+ * Addresses styling for `hidden` attribute not present in IE 8/9.
+ */
+
+[hidden] {
+    display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/*
+ * 1. Sets default font family to sans-serif.
+ * 2. Prevents iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+    font-family: sans-serif; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    -ms-text-size-adjust: 100%; /* 2 */
+}
+
+/*
+ * Removes default margin.
+ */
+
+body {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/*
+ * Addresses `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/*
+ * Improves readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/*
+ * Addresses `h1` font sizes within `section` and `article` in Firefox 4+,
+ * Safari 5, and Chrome.
+ */
+
+h1 {
+    font-size: 2em;
+}
+
+/*
+ * Addresses styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+/*
+ * Addresses style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+
+b,
+strong {
+    font-weight: bold;
+}
+
+/*
+ * Addresses styling not present in Safari 5 and Chrome.
+ */
+
+dfn {
+    font-style: italic;
+}
+
+/*
+ * Addresses styling not present in IE 8/9.
+ */
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+
+/*
+ * Corrects font family set oddly in Safari 5 and Chrome.
+ */
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+
+/*
+ * Improves readability of pre-formatted text in all browsers.
+ */
+
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/*
+ * Sets consistent quote types.
+ */
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/*
+ * Addresses inconsistent and variable font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+/*
+ * Prevents `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+
+/*
+ * Removes border when inside `a` element in IE 8/9.
+ */
+
+img {
+    border: 0;
+}
+
+/*
+ * Corrects overflow displayed oddly in IE 9.
+ */
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+
+/*
+ * Addresses margin not present in IE 8/9 and Safari 5.
+ */
+
+figure {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/*
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/*
+ * 1. Corrects color not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+    border: 0; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/*
+ * 1. Corrects font family not being inherited in all browsers.
+ * 2. Corrects font size not being inherited in all browsers.
+ * 3. Addresses margins set differently in Firefox 4+, Safari 5, and Chrome
+ */
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 2 */
+    margin: 0; /* 3 */
+}
+
+/*
+ * Addresses Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+    line-height: normal;
+}
+
+/*
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Corrects inability to style clickable `input` types in iOS.
+ * 3. Improves usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+}
+
+/*
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+input[disabled] {
+    cursor: default;
+}
+
+/*
+ * 1. Addresses box sizing set to `content-box` in IE 8/9.
+ * 2. Removes excess padding in IE 8/9.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/*
+ * 1. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/*
+ * Removes inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/*
+ * Removes inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/*
+ * 1. Removes default vertical scrollbar in IE 8/9.
+ * 2. Improves readability and alignment in all browsers.
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+/*
+ * Remove most spacing between table cells.
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.CodeMirror {
+  line-height: 1em;
+  font-family: monospace;
+
+  /* Necessary so the scrollbar can be absolutely positioned within the wrapper on Lion. */
+  position: relative;
+  /* This prevents unwanted scrollbars from showing up on the body and wrapper in IE. */
+  overflow: hidden;
+}
+
+.CodeMirror-scroll {
+  overflow: auto;
+  height: 300px;
+  /* This is needed to prevent an IE[67] bug where the scrolled content
+     is visible outside of the scrolling box. */
+  position: relative;
+  outline: none;
+}
+
+/* Vertical scrollbar */
+.CodeMirror-scrollbar {
+  position: absolute;
+  right: 0; top: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  z-index: 5;
+}
+.CodeMirror-scrollbar-inner {
+  /* This needs to have a nonzero width in order for the scrollbar to appear
+     in Firefox and IE9. */
+  width: 1px;
+}
+.CodeMirror-scrollbar.cm-sb-overlap {
+  /* Ensure that the scrollbar appears in Lion, and that it overlaps the content
+     rather than sitting to the right of it. */
+  position: absolute;
+  z-index: 1;
+  float: none;
+  right: 0;
+  min-width: 12px;
+}
+.CodeMirror-scrollbar.cm-sb-nonoverlap {
+  min-width: 12px;
+}
+.CodeMirror-scrollbar.cm-sb-ie7 {
+  min-width: 18px;
+}
+
+.CodeMirror-gutter {
+  position: absolute; left: 0; top: 0;
+  z-index: 10;
+  background-color: #f7f7f7;
+  border-right: 1px solid #eee;
+  min-width: 2em;
+  height: 100%;
+}
+.CodeMirror-gutter-text {
+  color: #aaa;
+  text-align: right;
+  padding: .4em .2em .4em .4em;
+  white-space: pre !important;
+  cursor: default;
+}
+.CodeMirror-lines {
+  padding: .4em;
+  white-space: pre;
+  cursor: text;
+}
+
+.CodeMirror pre {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  border-width: 0; margin: 0; padding: 0; background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0; margin: 0;
+  white-space: pre;
+  word-wrap: normal;
+  line-height: inherit;
+  color: inherit;
+  overflow: visible;
+}
+
+.CodeMirror-wrap pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: normal;
+}
+.CodeMirror-wrap .CodeMirror-scroll {
+  overflow-x: hidden;
+}
+
+.CodeMirror textarea {
+  outline: none !important;
+}
+
+.CodeMirror pre.CodeMirror-cursor {
+  z-index: 10;
+  position: absolute;
+  visibility: hidden;
+  border-left: 1px solid black;
+  border-right: none;
+  width: 0;
+}
+.cm-keymap-fat-cursor pre.CodeMirror-cursor {
+  width: auto;
+  border: 0;
+  background: transparent;
+  background: rgba(0, 200, 0, .4);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#6600c800, endColorstr=#4c00c800);
+}
+/* Kludge to turn off filter in ie9+, which also accepts rgba */
+.cm-keymap-fat-cursor pre.CodeMirror-cursor:not(#nonsense_id) {
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.CodeMirror pre.CodeMirror-cursor.CodeMirror-overwrite {}
+.CodeMirror-focused pre.CodeMirror-cursor {
+  visibility: visible;
+}
+
+div.CodeMirror-selected { background: #d9d9d9; }
+.CodeMirror-focused div.CodeMirror-selected { background: #d7d4f0; }
+
+.CodeMirror-searching {
+  background: #ffa;
+  background: rgba(255, 255, 0, .4);
+}
+
+/* Default theme */
+
+.cm-s-default span.cm-keyword {color: #708;}
+.cm-s-default span.cm-atom {color: #219;}
+.cm-s-default span.cm-number {color: #164;}
+.cm-s-default span.cm-def {color: #00f;}
+.cm-s-default span.cm-variable {color: black;}
+.cm-s-default span.cm-variable-2 {color: #05a;}
+.cm-s-default span.cm-variable-3 {color: #085;}
+.cm-s-default span.cm-property {color: black;}
+.cm-s-default span.cm-operator {color: black;}
+.cm-s-default span.cm-comment {color: #a50;}
+.cm-s-default span.cm-string {color: #a11;}
+.cm-s-default span.cm-string-2 {color: #f50;}
+.cm-s-default span.cm-meta {color: #555;}
+.cm-s-default span.cm-error {color: #f00;}
+.cm-s-default span.cm-qualifier {color: #555;}
+.cm-s-default span.cm-builtin {color: #30a;}
+.cm-s-default span.cm-bracket {color: #997;}
+.cm-s-default span.cm-tag {color: #170;}
+.cm-s-default span.cm-attribute {color: #00c;}
+.cm-s-default span.cm-header {color: blue;}
+.cm-s-default span.cm-quote {color: #090;}
+.cm-s-default span.cm-hr {color: #999;}
+.cm-s-default span.cm-link {color: #00c;}
+
+span.cm-header, span.cm-strong {font-weight: bold;}
+span.cm-em {font-style: italic;}
+span.cm-emstrong {font-style: italic; font-weight: bold;}
+span.cm-link {text-decoration: underline;}
+
+span.cm-invalidchar {color: #f00;}
+
+div.CodeMirror span.CodeMirror-matchingbracket {color: #0f0;}
+div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
+
+@media print {
+
+  /* Hide the cursor when printing */
+  .CodeMirror pre.CodeMirror-cursor {
+    visibility: hidden;
+  }
+
+}
+body {
+  height: 100%;
+  background-image: url("../img/crisp_paper_ruffles.png");
+  font-family: 'PT Sans' sans-serif;
+  margin-bottom: 20px;
+  color: #222;
+}
+h1 {
+  color: #f24730;
+  font-size: 3.5em;
+  font-family: 'Lobster Two', cursive;
+  font-weight: normal;
+  text-shadow: 1px 1px rgba(0,0,0,0.5);
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+.banner {
+  background-color: rgba(250,206,162,0.5);
+  width: 70%;
+  max-width: 500px;
+  margin: 30px auto 10px auto;
+  padding: 30px;
+  overflow: hidden;
+}
+.banner .subtitle {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+a,
+a:visited {
+  color: #000;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 1px;
+  border-bottom: 1px solid #000;
+}
+a:hover,
+a:visited:hover {
+  color: #bb3711;
+  border-bottom: 1px solid #bb3711;
+}
+/*
+  Application
+  The container for the entire application.
+*/
+.application {
+  overflow: hidden;
+}
+.app-footer {
+  width: 100%;
+  height: 20px;
+  background-color: rgba(255,255,255,0.5);
+  position: fixed;
+  bottom: 0;
+  ((null)): 0;
+}
+.app-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 5px;
+  opacity: 0.5;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  filter: alpha(opacity=50);
+  -webkit-transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  -ms-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+}
+.app-footer ul:hover {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+.app-footer ul li {
+  float: left;
+  width: 33.33%;
+  text-align: center;
+}
+.app-footer ul li:first-child {
+  text-align: left;
+}
+.app-footer ul li:last-child {
+  text-align: right;
+}
+/*
+  Position Styles
+  Styles that semantically change position of elements.
+*/
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+.text-center {
+  text-align: center;
+}
+/*
+  Code Editor and Example View
+*/
+.code-and-example {
+  zoom: 1;
+}
+.code-and-example:before,
+.code-and-example:after {
+  content: "";
+  display: table;
+}
+.code-and-example:after {
+  clear: both;
+}
+/*
+  Code and Status Bar
+  Contains the code view and its status bar.
+
+  .focused - When the view becomes focused, we hide some elements.
+*/
+.code-and-status-bar {
+  z-index: 100;
+  width: 560px;
+  position: relative;
+  float: left;
+}
+.code-and-status-bar.javascript .code-view:after {
+  content: 'JavaScript';
+}
+.code-and-status-bar.css .code-view:after {
+  content: 'CSS';
+}
+.code-and-status-bar.coffeescript .code-view:after {
+  content: 'CoffeeScript';
+}
+.code-and-status-bar.focused .CodeMirror {
+  border-color: #000;
+}
+.code-and-status-bar.focused.coffeescript .code-view:after {
+  display: none;
+}
+.code-and-status-bar.focused:not(.coffeescript) .CodeMirror {
+  border-color: #ccc;
+}
+.code-and-status-bar.focused:not(.coffeescript) .CodeMirror-cursor {
+  display: none;
+}
+.code-and-status-bar.focused .code-toolbar.focused.coffeescript {
+  border-color: #000;
+  border-top: 1px solid #ccc;
+}
+/*
+  Code Mirror
+  Styles for the Code Mirror regions.
+*/
+.CodeMirror {
+  width: 550px;
+  background-color: rgba(253,253,253,0.5);
+  -webkit-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+  padding: 2px 4px;
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+.no-toolbar .CodeMirror {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.CodeMirror-scroll {
+  height: auto;
+}
+.CodeMirror-gutter {
+  background-color: rgba(255,255,255,0.5);
+  border-right: 1px solid #ccc;
+}
+.CodeMirror-lines .error {
+  background-color: rgba(255,0,0,0.1);
+}
+/*
+  Code View
+  The view that wraps the Code Mirror view.
+
+  .focused    - Highlight the border of the view when its focused.
+  .javascript - Hide the cursor when in JavaScript mode since they can't edit.
+*/
+.code-view:after {
+  font-size: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-border-radius: 0 5px 0 5px;
+  border-radius: 0 5px 0 5px;
+  border: 1px solid #ccc;
+  padding: 1px 5px 0 5px;
+  color: #888;
+}
+/*
+  Code Toolbar
+  The toolbar below a Code Mirror view. Contains buttons and output relevant to
+  the code view.
+
+  .focused - Highlight the borders when focused.
+*/
+.code-toolbar {
+  overflow: hidden;
+  font-size: 0.8em;
+  background-color: rgba(253,253,253,0.5);
+  border: 1px solid #ccc;
+  -webkit-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+}
+.code-toolbar .messages {
+  max-width: 445px;
+  padding-left: 5px;
+  color: #888;
+  float: left;
+  word-break: break-all;
+}
+.code-toolbar .messages.error {
+  background-color: rgba(255,0,0,0.2);
+  color: #b30000;
+}
+.code-toolbar .buttons {
+  float: right;
+  padding: 0 5px;
+  text-align: center;
+}
+.code-toolbar .buttons a {
+  color: #888;
+  padding: 0 8px;
+  border-bottom: none;
+  border-left: 1px solid #ccc;
+}
+.code-toolbar .buttons a:hover {
+  text-decoration: underline;
+}
+/*
+  Fake Code
+  The fake code view that is shown instead of the code view.
+*/
+.fake-code {
+  height: 150px;
+  background-color: rgba(253,253,253,0.5);
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: #ccc;
+  font-size: 3em;
+  text-align: center;
+  line-height: 150px;
+}
+/*
+  Squid
+  The squid example view, which will be modified by the user in the code
+  exapmles.
+*/
+.squid {
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  float: right;
+  border: 1px solid #000;
+  font-size: 0.8em;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.squid img {
+  margin: auto;
+  display: block;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.squid tr {
+  background-color: #ccc;
+  border-top: 1px solid #ccc;
+}
+.squid tr:nth-child(odd) {
+  background-color: #eee;
+}
+.squid td {
+  padding: 0;
+  overflow: hidden;
+  word-break: break-all;
+}
+.squid td:first-child {
+  padding: 0 4px;
+}
+.squid td:not(:first-child) {
+  border-left: 1px solid #888;
+  padding: 0 8px;
+}
+.squid td.label {
+  min-width: 35px;
+}
+/*
+  Log View
+  A logger area that shows log messages from the code area.
+*/
+.log {
+  float: right;
+  width: 150px;
+}
+.log header {
+  zoom: 1;
+}
+.log header:before,
+.log header:after {
+  content: "";
+  display: table;
+}
+.log header:after {
+  clear: both;
+}
+.log h4 {
+  float: left;
+  font-size: 0.7em;
+  font-weight: normal;
+  color: #888;
+  margin: 0;
+  padding: 0;
+}
+.log a {
+  font-size: 0.7em;
+  color: #888;
+  border-bottom: none;
+}
+.log a:hover {
+  color: #888;
+}
+.log.expanded {
+  float: none;
+  width: 560px;
+}
+.log-area {
+  height: auto;
+  min-height: 30px;
+  max-height: 150px;
+  overflow: auto;
+  display: block;
+  margin: 0;
+  background-color: rgba(253,253,253,0.5);
+  border: 1px solid #ccc;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 0.8em;
+}
+/*
+  Example Container View
+  A container that can hold many example views.
+*/
+.example-container-view {
+  float: right;
+  width: 150px;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+.example-child-view {
+  border: 1px solid #000;
+  margin: 3px 0;
+}
+.example-child-view.color-red {
+  color: #f00;
+}
+.example-child-view.color-green {
+  color: #008000;
+}
+.example-child-view.color-blue {
+  color: #00f;
+}
+.example-child-view.hidden {
+  display: none;
+}
+/*
+  Slide List
+  The small set of slides shown on the homepage.
+*/
+ul.slide-list {
+  list-style: none;
+  padding-bottom: 40px;
+  width: 80%;
+  margin: 0 auto;
+  zoom: 1;
+}
+ul.slide-list:before,
+ul.slide-list:after {
+  content: "";
+  display: table;
+}
+ul.slide-list:after {
+  clear: both;
+}
+ul.slide-list > li {
+  float: left;
+  padding: 0;
+  margin: 0;
+  width: 250px;
+  height: 200px;
+}
+/*
+  Slide
+  The body of a single slide.
+*/
+.slide {
+  width: 768px;
+  margin: 0 auto;
+  zoom: 1;
+}
+.slide:before,
+.slide:after {
+  content: "";
+  display: table;
+}
+.slide:after {
+  clear: both;
+}
+.slide h1 {
+  max-width: 764px;
+  background-color: rgba(255,255,255,0.4);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.slide h2 {
+  font-size: 1.9em;
+}
+.slide p {
+  margin: 10px 0;
+}
+.slide section > ul {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.slide section > ul li:before {
+  content: ">";
+  color: #777;
+  margin-right: 10px;
+}
+.slide section > ul li {
+  font-size: 28px;
+  font-size: 1.8em;
+  margin: 18px 0;
+}
+.slide section > ul li.small {
+  font-size: 1.5em;
+}
+.slide section > ul li.smallest {
+  font-size: 1em;
+}
+.slide .subtle {
+  font-size: 0.8em;
+}
+.slide .subtle a {
+  color: #999;
+  border-color: #999;
+}
+.slide footer {
+  padding: 5px 10px;
+}
+.slide-content {
+  margin: 10px 20px;
+}
+/*
+  Doc Link
+  A small link to documentation
+*/
+a.doc-link {
+  color: #000;
+  position: relative;
+  bottom: 4px;
+  font-size: 0.3em;
+  padding: 1px 2px 0 2px;
+  background-color: #f67e6e;
+  border: 1px solid #f24730;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  opacity: 0.3;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  filter: alpha(opacity=30);
+}
+a.doc-link:hover {
+  border: 1px solid #f24730;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+/*
+  Note
+  A small note that appears in a more subtle text color.
+*/
+.note {
+  color: #888;
+  margin-top: 10px;
+}
+/*
+  Slide Notes
+  A note region meant for the presenter and for someone viewing the presentaion
+  without the presenter. Hidden by default.
+*/
+.slide-notes {
+  display: none;
+  background: rgba(0,0,0,0.8);
+  padding: 10px 8px 1px 8px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  position: relative;
+  border: 1px solid subtle-border-color;
+  color: #eee;
+  width: 70%;
+  margin: 10px auto;
+}
+.slide-notes:before {
+  content: 'Slide Notes';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 5px;
+  color: #acacac;
+  font-size: 0.8em;
+  -webkit-border-radius: 0 5px 0 5px;
+  border-radius: 0 5px 0 5px;
+  border-left: 1px solid subtle-border-color;
+  border-bottom: 1px solid subtle-border-color;
+}
+.slide-notes.shown {
+  display: block;
+}
+.slide-notes ul {
+  font-size: 0.5em;
+}
+.slide-notes a {
+  color: #eee;
+  border-color: #eee;
+}
+/*
+  Slide-Specific Styles
+  Styles that apply to only a single slide.
+*/
+.sane {
+  margin-top: 20px;
+  margin-bottom: -10px;
+}
+.slide ul.check-em li:after {
+  content: '✓';
+  margin-left: 20px;
+}
+.derpy-squid-small {
+  margin-top: -60px;
+  height: 60px;
+  position: relative;
+  top: 15px;
+}
+/*
+  Slide Controls
+  The controls that appear above all single slides.
+*/
+.slide-controls {
+  background-color: rgba(255,255,255,0.5);
+  padding: 0;
+  margin: 0 auto;
+  width: 768px;
+  zoom: 1;
+  list-style: none;
+  opacity: 0.5;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  filter: alpha(opacity=50);
+  -webkit-transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  -ms-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+}
+.slide-controls:before,
+.slide-controls:after {
+  content: "";
+  display: table;
+}
+.slide-controls:after {
+  clear: both;
+}
+.slide-controls:hover {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+.slide-controls li {
+  float: left;
+  padding: 10px 0;
+  text-align: center;
+  width: 20%;
+}
+.slide-controls li:first-child {
+  text-align: left;
+  width: 40%;
+}
+.slide-controls li:last-child {
+  text-align: right;
+  width: 40%;
+}
+.slide-controls li:hover {
+  cursor: pointer;
+}
+.slide-controls li:hover a {
+  font-weight: bold;
+  -webkit-animation: under-jiggle 0.4s ease-in-out;
+  -moz-animation: under-jiggle 0.4s ease-in-out;
+  -o-animation: under-jiggle 0.4s ease-in-out;
+  -ms-animation: under-jiggle 0.4s ease-in-out;
+  animation: under-jiggle 0.4s ease-in-out;
+}
+.slide-controls a {
+  display: inline;
+  margin: 0 10px;
+}
+/*
+  Slide Content Container
+  The container for the slide, which contains the overlay color for the slide.
+
+  .preview - The smaller version of the slide with certain details toned
+             down for the homepage.
+*/
+.slide-container {
+  min-width: 764px;
+  background-color: rgba(250,206,162,0.5);
+  margin: 3px 4px 8px 4px;
+  -webkit-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+  -webkit-box-shadow: 0 0 0px 1px rgba(0,0,0,0.3), 0 0 0px 5px #fff, 0 5px 4px #000;
+  box-shadow: 0 0 0px 1px rgba(0,0,0,0.3), 0 0 0px 5px #fff, 0 5px 4px #000;
+}
+.slide-container.preview {
+  background-color: #fcddbe;
+  height: 500px;
+  margin-bottom: -320px;
+  -webkit-transform: scale(0.3) translate(-768px, -500px);
+  -moz-transform: scale(0.3) translate(-768px, -500px);
+  -o-transform: scale(0.3) translate(-768px, -500px);
+  -ms-transform: scale(0.3) translate(-768px, -500px);
+  transform: scale(0.3) translate(-768px, -500px);
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 5px 5px #000;
+  box-shadow: 0 0 5px 5px #000;
+}
+.slide-container.preview:before {
+  content: '';
+  background-color: transparent;
+  position: fixed;
+  z-index: 200;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.slide-container.preview.flash {
+  -webkit-animation: flash 2s ease-in;
+  -moz-animation: flash 2s ease-in;
+  -o-animation: flash 2s ease-in;
+  -ms-animation: flash 2s ease-in;
+  animation: flash 2s ease-in;
+}
+.slide-container.preview:hover {
+  cursor: pointer;
+}
+.slide-container.preview .slide {
+  width: 100%;
+}
+/*
+  Slide Background
+  A wrapper around the slide to contain the background image so the tint can be
+  changed in the overlay container.
+*/
+.slide-background {
+  min-width: 768px;
+  background-image: url("../img/foil.png");
+}
+.application.wiggle-left .slide-background {
+  position: relative;
+  -webkit-animation: wiggle-left 0.5s ease-in-out;
+  -moz-animation: wiggle-left 0.5s ease-in-out;
+  -o-animation: wiggle-left 0.5s ease-in-out;
+  -ms-animation: wiggle-left 0.5s ease-in-out;
+  animation: wiggle-left 0.5s ease-in-out;
+}
+.application.wiggle-right .slide-background {
+  position: relative;
+  -webkit-animation: wiggle-right 0.5s ease-in-out;
+  -moz-animation: wiggle-right 0.5s ease-in-out;
+  -o-animation: wiggle-right 0.5s ease-in-out;
+  -ms-animation: wiggle-right 0.5s ease-in-out;
+  animation: wiggle-right 0.5s ease-in-out;
+}
+.slide-number {
+  float: right;
+  margin-right: -20px;
+}
+@-moz-keyframes under-jiggle {
+  0% {
+    -webkit-box-shadow: 0 1px 0px -1px #000;
+    box-shadow: 0 1px 0px -1px #000;
+  }
+
+  50% {
+    -webkit-box-shadow: 0 3px 0px -1px #000;
+    box-shadow: 0 3px 0px -1px #000;
+  }
+
+  100% {
+    -webkit-box-shadow: 0 1px 0px -1px #000;
+    box-shadow: 0 1px 0px -1px #000;
+  }
+}
+@-webkit-keyframes under-jiggle {
+  0% {
+    -webkit-box-shadow: 0 1px 0px -1px #000;
+    box-shadow: 0 1px 0px -1px #000;
+  }
+
+  50% {
+    -webkit-box-shadow: 0 3px 0px -1px #000;
+    box-shadow: 0 3px 0px -1px #000;
+  }
+
+  100% {
+    -webkit-box-shadow: 0 1px 0px -1px #000;
+    box-shadow: 0 1px 0px -1px #000;
+  }
+}
+@-o-keyframes under-jiggle {
+  0% {
+    -webkit-box-shadow: 0 1px 0px -1px #000;
+    box-shadow: 0 1px 0px -1px #000;
+  }
+
+  50% {
+    -webkit-box-shadow: 0 3px 0px -1px #000;
+    box-shadow: 0 3px 0px -1px #000;
+  }
+
+  100% {
+    -webkit-box-shadow: 0 1px 0px -1px #000;
+    box-shadow: 0 1px 0px -1px #000;
+  }
+}
+@-ms-keyframes under-jiggle {
+  0% {
+    -webkit-box-shadow: 0 1px 0px -1px #000;
+    box-shadow: 0 1px 0px -1px #000;
+  }
+
+  50% {
+    -webkit-box-shadow: 0 3px 0px -1px #000;
+    box-shadow: 0 3px 0px -1px #000;
+  }
+
+  100% {
+    -webkit-box-shadow: 0 1px 0px -1px #000;
+    box-shadow: 0 1px 0px -1px #000;
+  }
+}
+@keyframes under-jiggle {
+  0% {
+    -webkit-box-shadow: 0 1px 0px -1px #000;
+    box-shadow: 0 1px 0px -1px #000;
+  }
+
+  50% {
+    -webkit-box-shadow: 0 3px 0px -1px #000;
+    box-shadow: 0 3px 0px -1px #000;
+  }
+
+  100% {
+    -webkit-box-shadow: 0 1px 0px -1px #000;
+    box-shadow: 0 1px 0px -1px #000;
+  }
+}
+@-moz-keyframes flash {
+  0% {
+    -webkit-box-shadow: 0 0 5px 10px #ff0;
+    box-shadow: 0 0 5px 10px #ff0;
+  }
+
+  100% {
+    -webkit-box-shadow: 0 0 5px 5px #000;
+    box-shadow: 0 0 5px 5px #000;
+  }
+}
+@-webkit-keyframes flash {
+  0% {
+    -webkit-box-shadow: 0 0 5px 10px #ff0;
+    box-shadow: 0 0 5px 10px #ff0;
+  }
+
+  100% {
+    -webkit-box-shadow: 0 0 5px 5px #000;
+    box-shadow: 0 0 5px 5px #000;
+  }
+}
+@-o-keyframes flash {
+  0% {
+    -webkit-box-shadow: 0 0 5px 10px #ff0;
+    box-shadow: 0 0 5px 10px #ff0;
+  }
+
+  100% {
+    -webkit-box-shadow: 0 0 5px 5px #000;
+    box-shadow: 0 0 5px 5px #000;
+  }
+}
+@-ms-keyframes flash {
+  0% {
+    -webkit-box-shadow: 0 0 5px 10px #ff0;
+    box-shadow: 0 0 5px 10px #ff0;
+  }
+
+  100% {
+    -webkit-box-shadow: 0 0 5px 5px #000;
+    box-shadow: 0 0 5px 5px #000;
+  }
+}
+@keyframes flash {
+  0% {
+    -webkit-box-shadow: 0 0 5px 10px #ff0;
+    box-shadow: 0 0 5px 10px #ff0;
+  }
+
+  100% {
+    -webkit-box-shadow: 0 0 5px 5px #000;
+    box-shadow: 0 0 5px 5px #000;
+  }
+}
+@-moz-keyframes wiggle-left {
+  25% {
+    margin-left: -30px;
+  }
+
+  50% {
+    margin-left: 10px;
+  }
+}
+@-webkit-keyframes wiggle-left {
+  25% {
+    margin-left: -30px;
+  }
+
+  50% {
+    margin-left: 10px;
+  }
+}
+@-o-keyframes wiggle-left {
+  25% {
+    margin-left: -30px;
+  }
+
+  50% {
+    margin-left: 10px;
+  }
+}
+@-ms-keyframes wiggle-left {
+  25% {
+    margin-left: -30px;
+  }
+
+  50% {
+    margin-left: 10px;
+  }
+}
+@keyframes wiggle-left {
+  25% {
+    margin-left: -30px;
+  }
+
+  50% {
+    margin-left: 10px;
+  }
+}
+@-moz-keyframes wiggle-right {
+  25% {
+    margin-right: 30px;
+  }
+
+  50% {
+    margin-right: -10px;
+  }
+}
+@-webkit-keyframes wiggle-right {
+  25% {
+    margin-right: 30px;
+  }
+
+  50% {
+    margin-right: -10px;
+  }
+}
+@-o-keyframes wiggle-right {
+  25% {
+    margin-right: 30px;
+  }
+
+  50% {
+    margin-right: -10px;
+  }
+}
+@-ms-keyframes wiggle-right {
+  25% {
+    margin-right: 30px;
+  }
+
+  50% {
+    margin-right: -10px;
+  }
+}
+@keyframes wiggle-right {
+  25% {
+    margin-right: 30px;
+  }
+
+  50% {
+    margin-right: -10px;
+  }
+}
