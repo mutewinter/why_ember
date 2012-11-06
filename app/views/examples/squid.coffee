@@ -2,7 +2,7 @@ require 'views/examples/example'
 
 # Public: A view that holds the example squid to be modified by the CodeView.
 App.SquidView = App.ExampleView.extend
-  templateName: 'templates/squid'
+  templateName: 'templates/examples/squid'
   classNames: 'squid'
 
   # Public: Variables exported for the Code Editor to play with.
