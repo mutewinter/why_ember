@@ -102,6 +102,42 @@ a.doc-link
   margin-top 10px
 
 /*
+  Slide Notes
+  A note region meant for the presenter and for someone viewing the presentaion
+  without the presenter. Hidden by default.
+*/
+.slide-notes
+  display none
+
+  background rgba(white, 0.6)
+  padding 10px 5px
+  border-radius 5px
+  position relative
+  border 1px solid subtle-border-color
+  color #666
+  width 70%
+  margin 10px auto
+
+  &:before
+    content 'Slide Notes'
+
+    position absolute
+    top 0
+    right 0
+    padding 0 5px
+
+    color subtle-text-color
+    font-size 0.8em
+
+    border-radius 0 5px 0 5px
+    border-left 1px solid subtle-border-color
+    border-bottom 1px solid subtle-border-color
+
+  &.shown
+    display block
+
+
+/*
   Slide-Specific Styles
   Styles that apply to only a single slide.
 */

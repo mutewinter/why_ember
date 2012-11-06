@@ -2,7 +2,7 @@
 App.NotesView = Ember.View.extend
   tagName: 'section'
 
-  classNames: 'notes'
+  classNames: 'slide-notes'
   classNameBindings: 'shown'.w()
 
   shownBinding: 'App.config.showNotes'
