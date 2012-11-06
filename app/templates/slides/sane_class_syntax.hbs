@@ -1,5 +1,6 @@
 <h2>Ember.Object.extend</h2>
-{{#code}}
+
+{{#code exampleViewClassName="App.LogView"}}
 # Define the Class with Instance Methods
 Squid = Ember.Object.extend()
 
@@ -9,17 +10,19 @@ Squid.reopenClass
     @create(color: color, wants: wants)
 
 blackSquid = Squid.squidBuilder('green', 'to derp less')
+log blackSquid.get('color')
 {{/code}}
 
 <h2>Ember.Object.create</h2>
-{{#code}}
+
+{{#code exampleViewClassName="App.LogView"}}
 # Skip Straight to an Object Instance
 blackSquid = Ember.Object.create(
   color: 'black'
   wants: 'to be a potato'
 )
 
-blackSquid.get('color') # 'black'
+log blackSquid.get('color')
 {{/code}}
 
 <footer class="sane subtle text-center">
