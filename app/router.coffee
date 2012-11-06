@@ -1,7 +1,7 @@
 # Public: The one and only Ember router. We move between all slide states here.
 App.Router = Ember.Router.extend
   # Logs transitions to the console
-  enableLogging: true
+  enableLogging: false
 
   goToSlide: Ember.Route.transitionTo('slides.show')
   goHome: Ember.Route.transitionTo('index')
