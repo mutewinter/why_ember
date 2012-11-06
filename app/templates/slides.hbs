@@ -11,7 +11,8 @@
       {{bindAttr class=":slide-container :preview content.isLastShownSlide:flash"}}>
       {{view App.SlideView contentBinding="content" preview=true}}
     </div>
+    <span class="slide-number">
+      {{content.slideNumber}} / {{App.slides.length}}
+    </span>
   {{/with}}
 {{/collection}}
-<span class="pull-right">{{content.length}} Slides</span>
-

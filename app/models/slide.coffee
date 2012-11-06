@@ -14,3 +14,8 @@ App.Slide = Ember.Object.extend
   isLastShownSlide: (->
     this == App.get('lastShownSlide')
   ).property('App.lastShownSlide')
+
+  # Public: The slide's number in the list of slides.
+  slideNumber: (->
+    App.get('slides').indexOf(this) + 1
+  ).property()

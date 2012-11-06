@@ -5,6 +5,7 @@ slide-background-color = rgb(250,206,162)
 slide-width = 768px
 slide-margin = 4px
 subtle-text-color = #888
+preview-height = 200px
 
 /*
   Slide List
@@ -14,6 +15,7 @@ subtle-text-color = #888
 ul.slide-list
   list-style none
 
+  padding-bottom 40px
   width 80%
   margin 0 auto
 
@@ -24,7 +26,7 @@ ul.slide-list
     padding 0
     margin 0
     width 250px
-    height 200px
+    height preview-height
 
 /*
   Slide
@@ -247,6 +249,9 @@ a.doc-link
     fixed-height = 500px
     height fixed-height
 
+    // Allow elements below the slide by compensating for the fake height
+    margin-bottom -1 * (preview-height + 120px)
+
     transform scale(0.3) translate((-1 * slide-width), (-1 * fixed-height))
     overflow hidden
 
@@ -301,3 +306,7 @@ second-offset = 10px
     margin-right (first-offset * -1)
   50%
     margin-right (second-offset * -1)
+
+.slide-number
+  float right
+  margin-right -20px
