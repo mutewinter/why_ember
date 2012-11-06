@@ -5,6 +5,7 @@ App.Slide.reopenClass
     { templateName: 'what_is_ember', title: 'What is Ember?' }
     { templateName: 'why_ember', title: 'Why Ember?' }
     { templateName: 'code_samples', title: 'Code Samples' }
+    { templateName: 'follow_along', title: 'Follow Along' }
     { templateName: 'built_in_goodies', title: 'Built in Goodies' }
     { templateName: 'data_binding', title: 'Data Binding' }
     { templateName: 'computed_properties', title: 'Computed Properties' }
