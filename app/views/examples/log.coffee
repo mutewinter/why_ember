@@ -26,9 +26,10 @@ App.LogView = App.ExampleView.extend
   #
   # Returns the string.
   variableToString: (variable) ->
+    emberType = Ember.typeOf(variable)
     if variable? and typeof variable is 'object' and
-    Ember.typeOf(variable) is 'object'
-      maxPairs = 3
+    (emberType is 'object' or emberType is 'instance')
+      maxPairs = 4
       count = 0
       string = Ember.keys(variable).map((key) ->
         # Log a few of the Ember object's key value pairs.
@@ -41,9 +42,9 @@ App.LogView = App.ExampleView.extend
       ).join(', ')
       string += '...' if count > maxPairs
       string = "{#{string}}"
-    else if Ember.typeOf(variable) is 'array'
+    else if emberType is 'array'
       string = "[#{variable}]"
-    else if Ember.typeOf(variable) is 'string'
+    else if emberType is 'string'
       string = "\"#{variable}\""
     else if variable?
       # Just call toString
