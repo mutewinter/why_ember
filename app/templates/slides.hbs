@@ -5,6 +5,9 @@
     presentation I will give you some compelling reasons to consider Ember.
   </div>
 </div>
+<div class="instructions">
+  <a {{action goToSlide App.firstSlide href=true}}>Start Here</a> or Click a Slide Below
+</div>
 {{#collection class="slide-list" contentBinding="content" tagName="ul" itemTagName="li"}}
   {{#with view.content as content}}
     <div {{action goToSlide content}}
