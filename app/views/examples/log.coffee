@@ -3,8 +3,10 @@ require('views/examples/example')
 # Public: The squid view, with some computed properties
 App.LogView = App.ExampleView.extend
   classNames: 'log'
+  classNameBindings: 'isExpanded:expanded'
   exportedFunctions: 'log'.w()
   templateName: 'templates/examples/log'
+  isExpanded: false
 
   init: ->
     @set('logMessages', [])
@@ -51,7 +53,13 @@ App.LogView = App.ExampleView.extend
 
     string
 
+  willRunCode: ->
+    @clearLog()
 
+  clearLog: ->
+    @get('logMessages').clear()
+
+  # Public: Newline separated and log count prefixed log messages.
   logMessagesText: (->
     lineNumber = 0
     @get('logMessages').map((message) ->
@@ -60,8 +68,7 @@ App.LogView = App.ExampleView.extend
     ).join('\n')
   ).property('logMessages.@each')
 
-  willRunCode: ->
-    @clearLog()
-
-  clearLog: ->
-    @get('logMessages').clear()
+  # ------------
+  # User Actions
+  # ------------
+  expand: -> @toggleProperty('isExpanded')

@@ -219,12 +219,27 @@ code-z-index = 100
   float right
   width 150px
 
+  header
+    clearfix()
+
   h4
+    float left
     font-size 0.7em
     font-weight normal
     color subtle-text-color
     margin 0
     padding 0
+
+  a
+    font-size 0.7em
+    color subtle-text-color
+    border-bottom none
+    &:hover
+      color subtle-text-color
+
+  &.expanded
+    float none
+    width code-width + 10px
 
 .log-area
   height auto
