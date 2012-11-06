@@ -7,9 +7,9 @@ App.Slide.reopenClass
     { templateName: 'code_samples', title: 'Code Samples' }
     { templateName: 'built_in_goodies', title: 'Built in Goodies' }
     { templateName: 'data_binding', title: 'Data Binding' }
+    { templateName: 'computed_properties', title: 'Computed Properties' }
     { templateName: 'class_binding', title: 'Class Binding' }
     { templateName: 'attribute_binding', title: 'Attribute Binding' }
-    { templateName: 'computed_properties', title: 'Computed Properties' }
     { templateName: 'all_togther_now', title: 'All Together Now' }
     { templateName: 'sane_class_syntax', title: 'Sane Class Syntax' }
     { templateName: 'super', title: 'Super' }
