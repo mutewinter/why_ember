@@ -13,6 +13,7 @@ App.Slide.reopenClass
     { templateName: 'sane_class_syntax', title: 'Sane Class Syntax' }
     { templateName: 'super', title: 'Super' }
     { templateName: 'array_comprehensions', title: 'Array Comprehensions' }
+    { templateName: 'array_of_objects_methods', title: 'Array of Objects Methods' }
     { templateName: 'attribute_bindings', title: 'Attribute Bindings' }
     { templateName: 'third_party_javascript', title: 'Third Party JavaScript' }
     { templateName: 'acknowledgements', title: 'Acknowledgements' }

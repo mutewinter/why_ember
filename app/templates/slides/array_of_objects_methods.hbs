@@ -1,0 +1,21 @@
+<span>
+  findProperty {{documentation "Ember.NativeArray.html#method_findProperty"}}
+  mapProperty {{documentation "Ember.NativeArray.html#method_mapProperty"}}
+  everyProperty {{documentation "Ember.NativeArray.html#method_everyProperty"}}
+  someProperty {{documentation "Ember.NativeArray.html#method_someProperty"}}
+  filterProperty {{documentation "Ember.NativeArray.html#method_filterProperty"}}
+</span>
+{{#code exampleViewClassName="App.LogView" isExpanded=true}}
+data = [
+  {title: 'Derping with the Wind', releaseYear: 1939}
+  {title: 'Death of a Derpman', releaseYear: 1951}
+  {title: 'Forrest Derp', releaseYear: 1994}
+  {title: 'The Derpshank Redemption', releaseYear: 1994}
+]
+
+log data.findProperty('releaseYear', 1994)
+log data.mapProperty('title')
+log data.everyProperty('releaseYear', 1994)
+log data.someProperty('releaseYear', 1994)
+log data.filterProperty('releaseYear', 1994)
+{{/code}}
