@@ -7,14 +7,14 @@ App.Slide.reopenClass
     { templateName: 'code_samples', title: 'Code Samples' }
     { templateName: 'built_in_goodies', title: 'Built in Goodies' }
     { templateName: 'data_binding', title: 'Data Binding' }
-    { templateName: 'class_bindings', title: 'Class Bindings' }
+    { templateName: 'class_binding', title: 'Class Binding' }
+    { templateName: 'attribute_binding', title: 'Attribute Binding' }
     { templateName: 'computed_properties', title: 'Computed Properties' }
     { templateName: 'all_togther_now', title: 'All Together Now' }
     { templateName: 'sane_class_syntax', title: 'Sane Class Syntax' }
     { templateName: 'super', title: 'Super' }
     { templateName: 'array_comprehensions', title: 'Array Comprehensions' }
     { templateName: 'array_of_objects_methods', title: 'Array of Objects Methods' }
-    { templateName: 'attribute_bindings', title: 'Attribute Bindings' }
     { templateName: 'third_party_javascript', title: 'Third Party JavaScript' }
     { templateName: 'acknowledgements', title: 'Acknowledgements' }
   ]
