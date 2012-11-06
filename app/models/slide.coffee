@@ -1,7 +1,5 @@
 # Public: The model object that represents a single slide.
 App.Slide = Ember.Object.extend
-  classNames: 'slide-container'.w()
-
   # Public: Get the slug for this slide that will be used in the URL.
   slug: (->
     @get('templateName').dasherize()
