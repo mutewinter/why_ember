@@ -38,14 +38,23 @@ grandChild.prototype = new child();
 
 <h2>Ember</h2>
 
-{{#code}}
+{{#code exampleViewClassName="App.LogView"}}
 OceanAnimals = Ember.Object.extend
+  phylums: [
+    {animal: 'squid', scientificName: 'Cephalopoda'}
+    {animal: 'shark', scientificName: 'Chondrichthyes'}
+    {animal: 'clam', scientificName: 'Bivalvia'}
+  ]
+
   phylum: ->
-    'Phylum is '
+    phylum = @phylums.findProperty('animal', @get('animal'))
+    "Phylum is #{phylum.scientificName} "
 
 Squid = OceanAnimals.extend
+  animal: 'squid'
+  name: 'Bob'
   phylum: ->
-    @_super() + ' Derpysquidanimalus'
+    "#{@get('name')} the #{@get('animal')}'s #{@_super()}"
 
-Squid.create().phylum() # Phylum is Derpysquidanimalus
+log Squid.create().phylum()
 {{/code}}
