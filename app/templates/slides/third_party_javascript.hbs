@@ -8,7 +8,7 @@
   </li>
 </ul>
 
-<p> 
+<p>
   Here's a Sample Integration with <a
   href="http://timeago.yarp.com/">timeago</a>, a jQuery plugin
 </p>
@@ -24,3 +24,12 @@ childView = Ember.View.create
 
 containerView.get('childViews').pushObject childView
 {{/code}}
+
+{{#view App.NotesView}}
+  <p>
+    Ember enables you to use any third party JavaScript you might desire by
+    giving you callbacks into the view's life cycle. All you need to do is
+    listen to those callbacks and setup and tear down any extra JavaScript
+    functionality of which Ember isn't aware.
+  </p>
+{{/view}}

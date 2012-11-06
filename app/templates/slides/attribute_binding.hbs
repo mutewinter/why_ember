@@ -16,3 +16,16 @@ containerView.get('childViews').pushObject childView
 # Uncomment the line below to see the Squid change.
 # childView.set('src', '/img/less_derpy_squid.svg')
 {{/code}}
+
+{{#view App.NotesView}}
+  <p>
+    An attribute is a property that appears inside of the &lt; &gt; symbols.
+    Anchor tag hrefs, data- attributes, and anything else you can think of are
+    fair game.
+  </p>
+  <p>
+    You can bind any attribute an HTML element can have. Ember uses a data
+    attribute behind the scenes to modify the attribute value transparently for
+    you.
+  </p>
+{{/view}}

@@ -1,6 +1,14 @@
 <ul>
   <li>Almost No Code</li>
+{{#view App.NotesView}}
+  <p>
+    Which is really important since tweaking class values is something you do
+    frequently in a web application.
+  </p>
+{{/view}}
   <li>Works Great with Computed Properties</li>
+  <li>See <a href="http://emberjs.com/api/classes/Ember.View.html">Ember.View's
+    API Documentation </a> for more</li>
 </ul>
 
 {{#code noToolbar=true language="css"}}
@@ -45,3 +53,12 @@ containerView.get('childViews').pushObject secondChildView
 # firstChildView.set('isHidden', true)
 # secondChildView.set('color', 'green')
 {{/code}}
+
+{{#view App.NotesView}}
+  <p>
+    The syntactic sugar for declaring classNameBindings is confusing at first,
+    but is immediately understandable. By using an array of strings and the
+    String.w() method, class bindings end up resembling regular class
+    definitions.
+  </p>
+{{/view}}

@@ -9,6 +9,12 @@ String.fmt {{documentation "Ember.String.html#method_fmt"}}
 log 'item_one item2 third_item'.w()
 log 'Hello Mr. %@ the %@'.fmt('Derpy', 'Squid')
 {{/code}}
+{{#view App.NotesView}}
+  <p>
+    Ember has a couple built-in String manipulation methods. If you browse the
+    source code for this presenation you'll find me using them sometimes.
+  </p>
+{{/view}}
 
 <ul>
   <li>Utility Functions</li>
@@ -23,3 +29,9 @@ log Ember.typeOf('s'), Ember.typeOf([1,2]), Ember.typeOf(x: 1)
 log Ember.makeArray(1), Ember.makeArray([1,2])
 log Ember.keys(x: 1, y: 2)
 {{/code}}
+{{#view App.NotesView}}
+  <p>
+    These functions allow you to keep from adding a dependacy on another
+    library like <a href="http://underscorejs.org/">Underscore</a>.
+  </p>
+{{/view}}

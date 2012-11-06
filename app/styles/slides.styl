@@ -117,12 +117,12 @@ a.doc-link
 .slide-notes
   display none
 
-  background rgba(white, 0.6)
-  padding 10px 5px
+  background rgba(black, 0.8)
+  padding 10px 8px 1px 8px
   border-radius 5px
   position relative
   border 1px solid subtle-border-color
-  color #666
+  color #eee
   width 70%
   margin 10px auto
 
@@ -134,7 +134,7 @@ a.doc-link
     right 0
     padding 0 5px
 
-    color subtle-text-color
+    color lighten(subtle-text-color, 30%)
     font-size 0.8em
 
     border-radius 0 5px 0 5px
@@ -143,6 +143,13 @@ a.doc-link
 
   &.shown
     display block
+
+  ul
+    font-size 0.5em
+
+  a
+    color #eee
+    border-color #eee
 
 
 /*

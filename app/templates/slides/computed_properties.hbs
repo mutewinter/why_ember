@@ -1,7 +1,27 @@
 <ul>
   <li>Transform One Variable to Another</li>
+  {{#view App.NotesView}}
+    <p>
+      A simple concept that proves incredibly powerful in execution. Being able
+      to treat the complex output of your Ember Objects as simple variables
+      means you don't think about the complexity in your templates.
+    </p>
+  {{/view}}
   <li>Cached Automatically</li>
+  {{#view App.NotesView}}
+    <p>
+      Computed properties are cached when they are generated. I haven't found a
+      situation yet that I needed to disable the caching.
+    </p>
+  {{/view}}
   <li>Chainable</li>
+  {{#view App.NotesView}}
+    <p>
+      Chaining computed properties makes your code cleaner. Need re factor the
+      way one of your properties in the chain is generated? No worry,
+      everything will propagate automatically to its children.
+    </p>
+  {{/view}}
 </ul>
 
 {{#code exampleViewClassName="App.LogView"}}
@@ -23,3 +43,16 @@ log computedSquid.get('description')
 computedSquid.set('tentacleCount', 8)
 log computedSquid.get('description')
 {{/code}}
+
+{{#view App.NotesView}}
+  <p>
+    Computed properties sound fancy. The thing is, there are a lot of
+    situations in UI code where you don't want to be recalculating values every
+    time a function is called. Another bonus of computed properties is that
+    they can be put directly into a Ember Handlebars template.
+  <p>
+  </p>
+    I've found that on my Ember projects I end up using about 80% computed
+    properties and 20% functions.
+  </p>
+{{/view}}
