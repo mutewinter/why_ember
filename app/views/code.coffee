@@ -39,6 +39,9 @@ App.CodeView = Ember.View.extend
             @set('isCodeModified', false)
       onFocus: => @set('isFocused', true)
       onBlur: => @set('isFocused', false)
+      extraKeys:
+        Tab: (cm) -> cm.replaceSelection("  ", "end")
+
 
     editor = CodeMirror((element) =>
       @$().append(element)
