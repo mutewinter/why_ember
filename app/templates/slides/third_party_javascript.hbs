@@ -1,11 +1,26 @@
 <ul>
-  <li>Integrates into Ember Views Seemlessly</li>
+  <li>Integrates with Ember Views Seemlessly</li>
   <li>UI Widgets Work Better in Ember</li>
-  <li>
-    Wrapper Libraries Already
+  <li>Simple Callback System</li>
+  <li>Wrapper Libraries Already
     <a href="https://github.com/emberjs-addons/ember-bootstrap">Being</a>
-    <a href="https://github.com/lukemelia/jquery-ui-ember">Made</a>.
+    <a href="https://github.com/lukemelia/jquery-ui-ember">Made</a>
   </li>
-  <li></li>
-  <li></li>
 </ul>
+
+<p> 
+  Here's a Sample Integration with <a
+  href="http://timeago.yarp.com/">timeago</a>, a jQuery plugin
+</p>
+{{#code exampleViewClassName="App.ExampleContainerView"}}
+childView = Ember.View.create
+  template: Ember.Handlebars.compile(
+    '&lt;time &#123;{bindAttr datetime="view.timeString"}}>Right Now</time>')
+
+  didInsertElement: -> @$('time')?.timeago()
+
+  timeString: new Date().toUTCString()
+
+
+containerView.get('childViews').pushObject childView
+{{/code}}

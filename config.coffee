@@ -23,6 +23,7 @@ exports.config =
           'vendor/scripts/codemirror-coffeescript.js'
           'vendor/scripts/codemirror-javascript.js'
           'vendor/scripts/codemirror-css.js'
+          'vendor/scripts/jquery.timeago.js'
         ]
 
     stylesheets:

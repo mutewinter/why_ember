@@ -29,6 +29,11 @@ module.exports = Ember.Application.create
     slidePosition = @get('slides').indexOf(currentSlide) + 1
   ).property('currentSlide')
 
+  init: ->
+    @_super()
+    jQuery.timeago.settings.refreshMillis = 1000
+    jQuery.timeago.settings.strings.seconds = '%d seconds'
+
   # Public: We keep our application configuration in a neat little config
   # object.
   config: Ember.Object.create
