@@ -101,8 +101,7 @@ module.exports = Ember.Application.create({
     return slidePosition = this.get('slides').indexOf(currentSlide) + 1;
   }).property('currentSlide'),
   customEvents: {
-    'click': 'touchClick',
-    'touchend': 'touchClick'
+    'touchend': 'click'
   },
   init: function() {
     this._super();
@@ -941,23 +940,20 @@ function program1(depth0,data) {
   return buffer;}
 function program2(depth0,data) {
   
-  var buffer = '', stack1, stack2, stack3, stack4, stack5, stack6;
+  var buffer = '', stack1, stack2, stack3, stack4, stack5;
   data.buffer.push("\n    <div ");
   stack1 = depth0;
   stack2 = "content";
   stack3 = depth0;
   stack4 = "goToSlide";
-  stack5 = {};
-  stack6 = "touchClick";
-  stack5['on'] = stack6;
-  stack6 = helpers.action;
+  stack5 = helpers.action;
   tmp1 = {};
-  tmp1.hash = stack5;
+  tmp1.hash = {};
   tmp1.contexts = [];
   tmp1.contexts.push(stack3);
   tmp1.contexts.push(stack1);
   tmp1.data = data;
-  stack1 = stack6.call(depth0, stack4, stack2, tmp1);
+  stack1 = stack5.call(depth0, stack4, stack2, tmp1);
   data.buffer.push(escapeExpression(stack1) + "\n      ");
   stack1 = {};
   stack2 = ":slide-container :preview content.isLastShownSlide:flash";
