@@ -15,7 +15,9 @@
 {{#code exampleViewClassName="App.ExampleContainerView"}}
 childView = Ember.View.create
   template: Ember.Handlebars.compile(
-    '&lt;time &#123;{bindAttr datetime="view.timeString"}}>Right Now</time>')
+    '&lt;time &#123;{bindAttr datetime="view.timeString"}}&gt;
+      Right Now
+    &lt;/time&gt;')
 
   didInsertElement: -> @$('time')?.timeago()
 
