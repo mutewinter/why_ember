@@ -909,7 +909,7 @@ window.require.define({"templates/slides": function(exports, require, module) {
   
 Ember.TEMPLATES[module.id] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 helpers = helpers || Ember.Handlebars.helpers;
-  var buffer = '', stack1, stack2, foundHelper, tmp1, self=this, escapeExpression=this.escapeExpression, functionType="function", blockHelperMissing=helpers.blockHelperMissing;
+  var buffer = '', stack1, stack2, stack3, stack4, stack5, stack6, foundHelper, tmp1, self=this, escapeExpression=this.escapeExpression, functionType="function", blockHelperMissing=helpers.blockHelperMissing;
 
 function program1(depth0,data) {
   
@@ -999,7 +999,23 @@ function program2(depth0,data) {
   data.buffer.push(escapeExpression(stack1) + "\n    </span>\n  ");
   return buffer;}
 
-  data.buffer.push("<div class=\"banner\">\n  <h1>Why Ember?</h1>\n  <div class=\"subtitle\">\n    Why should I use Ember.js? JavaScript MVC frameworks are plentiful. In this\n    presentation I will give you some compelling reasons to consider Ember.\n  </div>\n</div>\n");
+  data.buffer.push("<div class=\"banner\">\n  <h1>Why Ember?</h1>\n  <div class=\"subtitle\">\n    Why should I use Ember.js? JavaScript MVC frameworks are plentiful. In this\n    presentation I will give you some compelling reasons to consider Ember.\n  </div>\n</div>\n<div class=\"instructions\">\n  <a ");
+  stack1 = depth0;
+  stack2 = "App.firstSlide";
+  stack3 = depth0;
+  stack4 = "goToSlide";
+  stack5 = {};
+  stack6 = true;
+  stack5['href'] = stack6;
+  stack6 = helpers.action;
+  tmp1 = {};
+  tmp1.hash = stack5;
+  tmp1.contexts = [];
+  tmp1.contexts.push(stack3);
+  tmp1.contexts.push(stack1);
+  tmp1.data = data;
+  stack1 = stack6.call(depth0, stack4, stack2, tmp1);
+  data.buffer.push(escapeExpression(stack1) + ">Start Here</a> or Click a Slide Below\n</div>\n");
   stack1 = {};
   stack2 = "slide-list";
   stack1['class'] = stack2;
@@ -1615,7 +1631,7 @@ helpers = helpers || Ember.Handlebars.helpers;
 function program1(depth0,data) {
   
   
-  data.buffer.push("\n# Change Slide Background to Blue\n$('.slide-container').css('background-color': 'rgba(0,50,100,0.25)')\n# Change Heading Color to Dark Blue\n$('.slide h1').css(color: 'darkBlue')\n# Change Link Style\n$('.slide li a').css\n    'border-bottom-style': 'double'\n    'border-bottom-width': '4px'\n    'border-bottom-color': '#1975E9'\n");}
+  data.buffer.push("\n# Change Slide Background Color to Blue\n$('.slide-container').css('background-color': 'rgba(0,50,100,0.25)')\n# Change Heading Color to Dark Blue\n$('.slide h1').css(color: 'darkBlue')\n# Change Link Style\n$('.slide li a').css\n    'border-bottom-style': 'double'\n    'border-bottom-width': '4px'\n    'border-bottom-color': '#1975E9'\n");}
 
 function program3(depth0,data) {
   
@@ -2059,9 +2075,9 @@ helpers = helpers || Ember.Handlebars.helpers;
 function program1(depth0,data) {
   
   
-  data.buffer.push("\n  <p>\n    Ember is a serious framework. External code dependencies beyond jQuery are\n    unnecessary. It's written by a team, who are currently being paid to write\n    Ember. It's still in Pre-release, but let the stability of this\n    presentation be a estimating to the quality of the code.\n  </p>\n");}
+  data.buffer.push("\n  <p>\n    Ember is a serious framework. External code dependencies beyond jQuery are\n    unnecessary. It's written by a team, that is currently being paid to write\n    Ember. It's still in Pre-release, but let the stability of this\n    presentation be a testament to the quality of the code.\n  </p>\n");}
 
-  data.buffer.push("<h2 class=\"text-center\">\n  “A Framework for Creating Ambitious Web Applications”\n</h2>\n\n<ul>\n  <li>An All-Inclusive JavaScript MVC Framework</li>\n  <li>23,162 Lines of Code</li>\n  <li>2,133 Unit Tests</li>\n  <li>Currently Release 1.0.0-PRE.2</li>\n</ul>\n\n");
+  data.buffer.push("<h2 class=\"text-center\">\n  “A Framework for Creating Ambitious Web Applications”\n</h2>\n\n<ul>\n  <li>An All-Inclusive JavaScript MVC Framework</li>\n  <li>9,000 Lines of Code</li>\n  <li>9,200 Lines of Inline Documentation</li>\n  <li>2,133 Unit Tests</li>\n  <li>Currently Release 1.0.0-PRE.2</li>\n</ul>\n\n");
   stack1 = depth0;
   stack2 = "App.NotesView";
   stack3 = helpers.view;

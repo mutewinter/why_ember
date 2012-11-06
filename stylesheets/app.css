@@ -581,6 +581,9 @@ h2 {
   margin: auto;
   text-align: center;
 }
+.instructions {
+  text-align: center;
+}
 a,
 a:visited {
   color: #000;
