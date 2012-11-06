@@ -10,7 +10,6 @@ App.Slide.reopenClass
     { templateName: 'computed_properties', title: 'Computed Properties' }
     { templateName: 'class_binding', title: 'Class Binding' }
     { templateName: 'attribute_binding', title: 'Attribute Binding' }
-    { templateName: 'all_togther_now', title: 'All Together Now' }
     { templateName: 'sane_class_syntax', title: 'Sane Class Syntax' }
     { templateName: 'super', title: 'Super' }
     { templateName: 'array_comprehensions', title: 'Array Comprehensions' }
