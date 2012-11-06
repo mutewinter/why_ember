@@ -9,6 +9,7 @@ App.LogView = App.ExampleView.extend
   isExpanded: false
 
   init: ->
+    @_super()
     @set('logMessages', [])
 
   # Public: Log a message into the logger area.
