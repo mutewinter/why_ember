@@ -1,1 +1,18 @@
-Empty
+<ul>
+  <li>Bind Any Attribute to a Variable</li>
+  <li>Simple Syntax</li>
+</ul>
+
+{{#code exampleViewClassName="App.ExampleContainerView"}}
+childView = Ember.View.create(
+  classNames: 'example-child-view'
+  template: Ember.Handlebars.compile(
+    '&lt;img &#123;{bindAttr src="view.src"}}/>')
+  src: '/img/squid.svg'
+)
+
+containerView.get('childViews').pushObject childView
+
+# Uncomment the line below to see the Squid change.
+# childView.set('src', '/img/less_derpy_squid.svg')
+{{/code}}
