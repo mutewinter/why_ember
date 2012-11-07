@@ -29,9 +29,6 @@ module.exports = Ember.Application.create
     slidePosition = @get('slides').indexOf(currentSlide) + 1
   ).property('currentSlide')
 
-  customEvents:
-    'touchend': 'click'
-
   init: ->
     @_super()
     jQuery.timeago.settings.refreshMillis = 1000
