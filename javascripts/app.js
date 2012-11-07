@@ -100,9 +100,6 @@ module.exports = Ember.Application.create({
     }
     return slidePosition = this.get('slides').indexOf(currentSlide) + 1;
   }).property('currentSlide'),
-  customEvents: {
-    'touchend': 'click'
-  },
   init: function() {
     this._super();
     jQuery.timeago.settings.refreshMillis = 1000;
@@ -2704,7 +2701,18 @@ window.require.define({"views/slide": function(exports, require, module) {
   
 App.SlideView = Ember.View.extend({
   classNames: 'slide',
-  templateName: 'templates/slide'
+  templateName: 'templates/slide',
+  didInsertElement: function() {
+    var _this = this;
+    if (this.get('preview')) {
+      return this.$().parent().on('touchend', function() {
+        return App.router.send('goToSlide', _this.get('content'));
+      });
+    }
+  },
+  willDestroyElement: function() {
+    return this.$().parent().off('touchend');
+  }
 });
 
 }});
