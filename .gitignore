@@ -26,7 +26,7 @@ node_modules/
 tmp/
 
 public/
-assets/
+/assets/
 stylesheets/
 javascripts/
 img/
