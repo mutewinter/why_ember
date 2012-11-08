@@ -1027,13 +1027,13 @@ ul.slide-list > li {
   A small link to documentation
 */
 a.doc-link {
-  color: #000;
+  color: #fff;
   position: relative;
   bottom: 4px;
   font-size: 0.3em;
   padding: 1px 2px 0 2px;
-  background-color: #f67e6e;
-  border: 1px solid #f24730;
+  background-color: #555;
+  border: 1px solid #bbb;
   -webkit-border-radius: 3px;
   border-radius: 3px;
   opacity: 0.3;
@@ -1041,7 +1041,8 @@ a.doc-link {
   filter: alpha(opacity=30);
 }
 a.doc-link:hover {
-  border: 1px solid #f24730;
+  color: #fff;
+  border: 1px solid #000;
   opacity: 1;
   -ms-filter: none;
   filter: none;
@@ -1183,7 +1184,7 @@ a.doc-link:hover {
 */
 .slide-container {
   min-width: 764px;
-  background-color: rgba(250,206,162,0.5);
+  background-color: rgba(250,194,137,0.5);
   margin: 3px 4px 8px 4px;
   -webkit-border-radius: 0 0 5px 5px;
   border-radius: 0 0 5px 5px;
@@ -1191,7 +1192,7 @@ a.doc-link:hover {
   box-shadow: 0 0 0px 1px rgba(0,0,0,0.3), 0 0 0px 5px #fff, 0 5px 4px #000;
 }
 .slide-container.preview {
-  background-color: #fcddbe;
+  background-color: #fbd4ac;
   height: 500px;
   margin-bottom: -320px;
   -webkit-transform: scale(0.3) translate(-768px, -500px);
