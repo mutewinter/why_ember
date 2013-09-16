@@ -43,3 +43,7 @@ browser will be automatically refreshed. Thanks
   * [Brunch](http://brunch.io) - Asset Compilation
   * [Node](http://nodejs.org/) - For Brunch
   * [Stylus](http://learnboost.github.com/stylus/) - CSS Templating
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/mutewinter/why_ember/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
